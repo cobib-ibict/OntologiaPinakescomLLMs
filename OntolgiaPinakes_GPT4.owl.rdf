@@ -1,0 +1,1632 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://pinakes.prd.ibict.br/ontology/pinakes#"
+     xml:base="http://pinakes.prd.ibict.br/ontology/pinakes"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:pin="http://pinakes.prd.ibict.br/ontology/pinakes#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes">
+        <rdfs:comment xml:lang="pt-br">Ontologia final com hierarquia rigorosa, propriedades de dados, de objeto e instâncias completas.</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Ontologia Pinakes Completa</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasInstituitionAddress -->
+
+    <owl:AnnotationProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasInstituitionAddress"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#contains -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#contains">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isContainedIn"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Colecao"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">contém</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasAdminNature -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasAdminNature">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isAdminNatureOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Instituicao"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#NaturezaAdministrativa"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem natureza administrativa</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasCollection -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasCollection">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isCollectionOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Biblioteca"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Colecao"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem coleção</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasContact -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasContact">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isContactOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Biblioteca"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Contato"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem contato</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasControlledSubject -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasControlledSubject">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isSubjectOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#AssuntoControlado"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem assunto controlado</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasFreeTerm -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasFreeTerm">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isFreeTermOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#TermoLivre"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem termo livre</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasHomepage -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasHomepage">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isHomepageOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Homepage"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem homepage</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasISSN -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasISSN">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isISSNOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#ISSN"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem ISSN</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasKnowledgeAreaTable -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasKnowledgeAreaTable">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isTableOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#AreaDeConhecimento"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#TabelaAreaDeConhecimento"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem tabela de área</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasKnowledgeField -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasKnowledgeField">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isKnowledgeFieldOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#AreaDeConhecimento"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem área de conhecimento</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasLibraryType -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasLibraryType">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isLibraryTypeOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Biblioteca"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#TipoDeBiblioteca"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem tipo de biblioteca</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasNote -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasNote">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isNoteOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Nota"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem nota</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasPlacePublication -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasPlacePublication">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isPlacePublicationOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoImprenta"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Localidade"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem local de publicação</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasPublicationDate -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasPublicationDate">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isPublicationDateOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoImprenta"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem data de publicação</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasPublicationLanguage -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasPublicationLanguage">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isLanguageOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Idioma"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem idioma de publicação</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasPublisher -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasPublisher">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isPublisherOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoImprenta"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Editora"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem editora</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasRelatedPublication -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasRelatedPublication">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isRelatedPublicationOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoRelacionada"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem publicação relacionada</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasSupport -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasSupport">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isSupportOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#ISSN"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#MeioFisico"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem meio físico</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#hasTitleComplement -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#hasTitleComplement">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isTitleComplementOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#TituloComplementar"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">tem título complementar</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#indexedBy -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#indexedBy">
+        <owl:inverseOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isIndexOf"/>
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Referenciador"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">indexada por</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isAdminNatureOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isAdminNatureOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#NaturezaAdministrativa"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Instituicao"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem natureza administrativa</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isCollectionOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isCollectionOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Colecao"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Biblioteca"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem coleção</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isContactOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isContactOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Contato"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Biblioteca"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem contato</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isContainedIn -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isContainedIn">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Colecao"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de contém</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isFreeTermOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isFreeTermOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#TermoLivre"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem termo livre</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isHomepageOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isHomepageOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Homepage"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem homepage</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isISSNOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isISSNOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#ISSN"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem ISSN</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isIndexOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isIndexOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Referenciador"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de indexada por</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isKnowledgeFieldOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isKnowledgeFieldOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#AreaDeConhecimento"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem área de conhecimento</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isLanguageOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isLanguageOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Idioma"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem idioma de publicação</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isLibraryTypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isLibraryTypeOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#TipoDeBiblioteca"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Biblioteca"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem tipo de biblioteca</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isNoteOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isNoteOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Nota"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem nota</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isPlacePublicationOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isPlacePublicationOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Localidade"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoImprenta"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem local de publicação</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isPublicationDateOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isPublicationDateOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoImprenta"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem data de publicação</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isPublisherOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isPublisherOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Editora"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoImprenta"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem editora</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isRelatedPublicationOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isRelatedPublicationOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoRelacionada"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem publicação relacionada</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isSubjectOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isSubjectOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#AssuntoControlado"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem assunto controlado</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isSupportOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isSupportOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#MeioFisico"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#ISSN"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem meio físico</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isTableOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isTableOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#TabelaAreaDeConhecimento"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#AreaDeConhecimento"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem tabela de área</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#isTitleComplementOf -->
+
+    <owl:ObjectProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#isTitleComplementOf">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#TituloComplementar"/>
+        <rdfs:range rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">inverso de tem título complementar</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#alfabetacao -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#alfabetacao">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Obra"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade alfabetacao</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Alfabetação</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#anoFinal -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#anoFinal">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Obra"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade anoFinal</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Ano Final</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#anoInicial -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#anoInicial">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Obra"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade anoInicial</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Ano Inicial</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#cep -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#cep">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Endereco"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade cep</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">CEP</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#cnpj -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#cnpj">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Instituicao"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade cnpj</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">CNPJ</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#conteudo -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#conteudo">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Obra"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade conteudo</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Conteúdo</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#dataDeAtualizacao -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#dataDeAtualizacao">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Obra"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade dataDeAtualizacao</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Data de Atualização</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#dataDeCadastro -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#dataDeCadastro">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Obra"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade dataDeCadastro</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Data de Cadastro</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#designacaoNumerica -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#designacaoNumerica">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Obra"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade designacaoNumerica</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Designação Numérica</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#enderecoEletronico -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#enderecoEletronico">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Homepage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade enderecoEletronico</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Endereço Eletrônico</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#fonte -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#fonte">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#AssuntoControlado"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade fonte</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Fonte</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#formatoDeCatalogacao -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#formatoDeCatalogacao">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade formatoDeCatalogacao</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Formato de Catalogação</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#formatoDocumento -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#formatoDocumento">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Colecao"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade formatoDocumento</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Formato do Documento</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#frequencia -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#frequencia">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade frequencia</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Frequência</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#latitude -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#latitude">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Endereco"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade latitude</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Latitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#logradouro -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#logradouro">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Endereco"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade logradouro</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Logradouro</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#longitude -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#longitude">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Endereco"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade longitude</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Longitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#nivelBibliografico -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#nivelBibliografico">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Obra"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade nivelBibliografico</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Nível Bibliográfico</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#nivelDeCatalogacao -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#nivelDeCatalogacao">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade nivelDeCatalogacao</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Nível de Catalogação</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#nome -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#nome">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade nome</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Nome</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#notaComplexidade -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#notaComplexidade">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Nota"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade notaComplexidade</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Nota de Complexidade</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#notaSuplemento -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#notaSuplemento">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Nota"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade notaSuplemento</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Nota de Suplemento</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#notasGerais -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#notasGerais">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Nota"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade notasGerais</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Notas Gerais</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#paginaWeb -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#paginaWeb">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Biblioteca"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade paginaWeb</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Página Web</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#principal -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#principal">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Contato"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade principal</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Contato Principal</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#requerimentoDeLigacao -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#requerimentoDeLigacao">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade requerimentoDeLigacao</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Requerimento de Ligação</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#sigla -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#sigla">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade sigla</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Sigla</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#situacaoDaPublicacao -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#situacaoDaPublicacao">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade situacaoDaPublicacao</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Situação da Publicação</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#softwareUtilizado -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#softwareUtilizado">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Biblioteca"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade softwareUtilizado</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Software Utilizado</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#statusDoRegistro -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#statusDoRegistro">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade statusDoRegistro</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Status do Registro</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#tipo -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#tipo">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Obra"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade tipo</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Tipo</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#tipoDeRegistro -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#tipoDeRegistro">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Obra"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade tipoDeRegistro</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Tipo de Registro</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#tituloProprio -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#tituloProprio">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Obra"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade tituloProprio</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Título Próprio</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#urlDoCatalogo -->
+
+    <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#urlDoCatalogo">
+        <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Biblioteca"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment xml:lang="pt-br">Propriedade urlDoCatalogo</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">URL do Catálogo</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Agente -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Agente">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
+        <rdfs:comment xml:lang="pt-br">Classe Agente</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Agente</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#AgenteColetivo -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#AgenteColetivo">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Agente"/>
+        <rdfs:comment xml:lang="pt-br">Classe AgenteColetivo</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">AgenteColetivo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#AreaDeConhecimento -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#AreaDeConhecimento">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Nomen"/>
+        <rdfs:comment xml:lang="pt-br">Classe AreaDeConhecimento</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">AreaDeConhecimento</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#AssuntoControlado -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#AssuntoControlado">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Nomen"/>
+        <rdfs:comment xml:lang="pt-br">Classe AssuntoControlado</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">AssuntoControlado</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Biblioteca -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Biblioteca">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#AgenteColetivo"/>
+        <rdfs:comment xml:lang="pt-br">Classe Biblioteca</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Biblioteca</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Colecao -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Colecao">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Item"/>
+        <rdfs:comment xml:lang="pt-br">Classe Colecao</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Colecao</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Contato -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Contato">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
+        <rdfs:comment xml:lang="pt-br">Classe Contato</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Contato</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Editora -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Editora">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Agente"/>
+        <rdfs:comment xml:lang="pt-br">Classe Editora</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Editora</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Endereco -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Endereco">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Lugar"/>
+        <rdfs:comment xml:lang="pt-br">Classe Endereco</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Endereco</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Expressao -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Expressao">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
+        <rdfs:comment xml:lang="pt-br">Classe Expressao</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Expressao</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Homepage -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Homepage">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
+        <rdfs:comment xml:lang="pt-br">Classe Homepage</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Homepage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#ISSN -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#ISSN">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Nomen"/>
+        <rdfs:comment xml:lang="pt-br">Classe ISSN</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">ISSN</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Idioma -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Idioma">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Expressao"/>
+        <rdfs:comment xml:lang="pt-br">Classe Idioma</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Idioma</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Instituicao -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Instituicao">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#AgenteColetivo"/>
+        <rdfs:comment xml:lang="pt-br">Classe Instituicao</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Instituicao</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Item -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Item">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
+        <rdfs:comment xml:lang="pt-br">Classe Item</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Localidade -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Localidade">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Lugar"/>
+        <rdfs:comment xml:lang="pt-br">Classe Localidade</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Localidade</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Lugar -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Lugar">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
+        <rdfs:comment xml:lang="pt-br">Classe Lugar</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Lugar</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Manifestacao -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Manifestacao">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
+        <rdfs:comment xml:lang="pt-br">Classe Manifestacao</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Manifestacao</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#MeioFisico -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#MeioFisico">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Manifestacao"/>
+        <rdfs:comment xml:lang="pt-br">Classe MeioFisico</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">MeioFisico</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#NaturezaAdministrativa -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#NaturezaAdministrativa">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
+        <rdfs:comment xml:lang="pt-br">Classe NaturezaAdministrativa</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">NaturezaAdministrativa</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Nomen -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Nomen">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
+        <rdfs:comment xml:lang="pt-br">Classe Nomen</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Nomen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Nota -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Nota">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
+        <rdfs:comment xml:lang="pt-br">Classe Nota</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Nota</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Obra -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Obra">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
+        <rdfs:comment xml:lang="pt-br">Classe Obra</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Obra</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Pais -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Pais">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Lugar"/>
+        <rdfs:comment xml:lang="pt-br">Classe Pais</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Pais</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoImprenta -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoImprenta">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
+        <rdfs:comment xml:lang="pt-br">Classe PublicacaoImprenta</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">PublicacaoImprenta</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoRelacionada -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoRelacionada">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Obra"/>
+        <rdfs:comment xml:lang="pt-br">Classe PublicacaoRelacionada</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">PublicacaoRelacionada</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Obra"/>
+        <rdfs:comment xml:lang="pt-br">Classe PublicacaoSeriada</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">PublicacaoSeriada</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Referenciador -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Referenciador">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
+        <rdfs:comment xml:lang="pt-br">Classe Referenciador</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Referenciador</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Regiao -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Regiao">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Lugar"/>
+        <rdfs:comment xml:lang="pt-br">Classe Regiao</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Regiao</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Res -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Res">
+        <rdfs:comment xml:lang="pt-br">Classe Res</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Res</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#TabelaAreaDeConhecimento -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#TabelaAreaDeConhecimento">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Nomen"/>
+        <rdfs:comment xml:lang="pt-br">Classe TabelaAreaDeConhecimento</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">TabelaAreaDeConhecimento</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#TermoLivre -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#TermoLivre">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
+        <rdfs:comment xml:lang="pt-br">Classe TermoLivre</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">TermoLivre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#TipoDeBiblioteca -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#TipoDeBiblioteca">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
+        <rdfs:comment xml:lang="pt-br">Classe TipoDeBiblioteca</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">TipoDeBiblioteca</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#TituloComplementar -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#TituloComplementar">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Nomen"/>
+        <rdfs:comment xml:lang="pt-br">Classe TituloComplementar</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">TituloComplementar</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Unidade -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Unidade">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#AgenteColetivo"/>
+        <rdfs:comment xml:lang="pt-br">Classe Unidade</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">Unidade</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/ontology/pinakes#UnidadeFederativa -->
+
+    <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#UnidadeFederativa">
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Lugar"/>
+        <rdfs:comment xml:lang="pt-br">Classe UnidadeFederativa</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes"/>
+        <rdfs:label xml:lang="pt-br">UnidadeFederativa</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/AreaDeConhecimento_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/AreaDeConhecimento_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#AreaDeConhecimento"/>
+        <hasKnowledgeAreaTable rdf:resource="http://pinakes.prd.ibict.br/resource/Tabela_1"/>
+        <nome>Ciências Sociais Aplicadas</nome>
+        <rdfs:comment xml:lang="pt-br">Instância da classe AreaDeConhecimento</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Ciências Sociais Aplicadas</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/AssuntoControlado_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/AssuntoControlado_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#AssuntoControlado"/>
+        <fonte>Tesauro da Unesco</fonte>
+        <nome>Biblioteconomia e Ciência da Informação</nome>
+        <rdfs:label xml:lang="pt-br">Biblioteconomia e Ciência da Informação</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/Biblioteca_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Biblioteca_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Biblioteca"/>
+        <hasAdminNature rdf:resource="http://pinakes.prd.ibict.br/resource/NaturezaAdministrativa_1"/>
+        <hasCollection rdf:resource="http://pinakes.prd.ibict.br/resource/Colecao_1"/>
+        <hasContact rdf:resource="http://pinakes.prd.ibict.br/resource/Contato_1"/>
+        <hasLibraryType rdf:resource="http://pinakes.prd.ibict.br/resource/TipoDeBiblioteca_1"/>
+        <isCollectionOf rdf:resource="http://pinakes.prd.ibict.br/resource/Colecao_1"/>
+        <isContactOf rdf:resource="http://pinakes.prd.ibict.br/resource/Contato_1"/>
+        <nome>Lydia de Queiroz Sambaquy</nome>
+        <paginaWeb>https://biblioteca.ibict.br</paginaWeb>
+        <sigla>LQS</sigla>
+        <softwareUtilizado>Koha</softwareUtilizado>
+        <urlDoCatalogo>https://biblioteca.ibict.br</urlDoCatalogo>
+        <rdfs:comment xml:lang="pt-br">Instância da classe Biblioteca</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Lydia de Queiroz Sambaquy</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/Colecao_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Colecao_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Colecao"/>
+        <contains rdf:resource="http://pinakes.prd.ibict.br/resource/Obra_1"/>
+        <formatoDocumento>Digital</formatoDocumento>
+        <nome>IBICT/BT</nome>
+        <rdfs:comment xml:lang="pt-br">Instância da classe Colecao</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">IBICT/BT</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/Contato_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Contato_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Contato"/>
+        <principal>(61)32176145</principal>
+        <rdfs:comment xml:lang="pt-br">Instância da classe Contato</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Contato_1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/Endereco_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Endereco_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Endereco"/>
+        <cep>70070-912</cep>
+        <latitude>-15.8042705</latitude>
+        <logradouro>Quadra 05, Lote 06, Bloco H 5º andar</logradouro>
+        <longitude>-47.8818373</longitude>
+        <rdfs:comment xml:lang="pt-br">Instância da classe Endereco</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Endereco_1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/Homepage_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Homepage_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Homepage"/>
+        <enderecoEletronico>https://www.ibict.br</enderecoEletronico>
+        <rdfs:label xml:lang="pt-br">Página do Ibict</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/ISSN_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/ISSN_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#ISSN"/>
+        <nome>0100-1965</nome>
+        <rdfs:label xml:lang="pt-br">0100-1965</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/ISSN_2 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/ISSN_2">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#ISSN"/>
+        <nome>1518-8353</nome>
+        <rdfs:comment xml:lang="pt-br">Instância da classe ISSN</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">1518-8353</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/Idioma_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Idioma_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Idioma"/>
+        <nome>Português</nome>
+        <sigla>PT</sigla>
+        <rdfs:label xml:lang="pt-br">Português</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/Idioma_2 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Idioma_2">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Idioma"/>
+        <nome>Inglês</nome>
+        <sigla>ENG</sigla>
+        <rdfs:comment xml:lang="pt-br">Instância da classe Idioma</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Inglês</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/Instituicao_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Instituicao_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Instituicao"/>
+        <hasAdminNature rdf:resource="http://pinakes.prd.ibict.br/resource/NaturezaAdministrativa_1"/>
+        <cnpj>04.082.993/0001-49</cnpj>
+        <nome>Instituto Brasileiro de Informação em Ciência e Tecnologia</nome>
+        <sigla>Ibict</sigla>
+        <hasInstituitionAddress rdf:resource="http://pinakes.prd.ibict.br/resource/Endereco_1"/>
+        <rdfs:comment xml:lang="pt-br">Instância da classe Instituicao</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Instituto Brasileiro de Informação em Ciência e Tecnologia</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/Localidade_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Localidade_1"/>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/MeioFisico_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/MeioFisico_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#MeioFisico"/>
+        <nome>Impresso</nome>
+        <rdfs:comment xml:lang="pt-br">Instância da classe MeioFisico</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Impresso</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/NaturezaAdministrativa_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/NaturezaAdministrativa_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#NaturezaAdministrativa"/>
+        <nome>Pública</nome>
+        <rdfs:comment xml:lang="pt-br">Instância da classe NaturezaAdministrativa</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Pública</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/Nota_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Nota_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Nota"/>
+        <notasGerais>Disponível online, texto integral no Portal CAPES</notasGerais>
+        <rdfs:comment xml:lang="pt-br">Instância da classe Nota</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Nota_1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/Obra_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Obra_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+        <hasControlledSubject rdf:resource="http://pinakes.prd.ibict.br/resource/AssuntoControlado_1"/>
+        <hasFreeTerm rdf:resource="http://pinakes.prd.ibict.br/resource/TermoLivre_1"/>
+        <hasHomepage rdf:resource="http://pinakes.prd.ibict.br/resource/Homepage_1"/>
+        <hasISSN rdf:resource="http://pinakes.prd.ibict.br/resource/ISSN_1"/>
+        <hasKnowledgeField rdf:resource="http://pinakes.prd.ibict.br/resource/AreaDeConhecimento_1"/>
+        <hasPublicationDate rdf:resource="http://pinakes.prd.ibict.br/resource/PublicacaoImprenta_1"/>
+        <hasPublicationLanguage rdf:resource="http://pinakes.prd.ibict.br/resource/Idioma_1"/>
+        <hasRelatedPublication rdf:resource="http://pinakes.prd.ibict.br/resource/PublicacaoRelacionada_1"/>
+        <hasTitleComplement rdf:resource="http://pinakes.prd.ibict.br/resource/TituloComplementar_1"/>
+        <indexedBy rdf:resource="http://pinakes.prd.ibict.br/resource/Referenciador_1"/>
+        <tituloProprio>Ciência da Informação</tituloProprio>
+        <rdfs:label xml:lang="pt-br">Ciência da Informação</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/PublicacaoImprenta_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/PublicacaoImprenta_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoImprenta"/>
+        <hasPlacePublication rdf:resource="http://pinakes.prd.ibict.br/resource/Localidade_1"/>
+        <anoInicial>1972</anoInicial>
+        <rdfs:comment xml:lang="pt-br">Instância da classe PublicacaoImprenta</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">PublicacaoImprenta_1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/PublicacaoRelacionada_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/PublicacaoRelacionada_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoRelacionada"/>
+        <tituloProprio>Ciência da Informação (Online)</tituloProprio>
+        <rdfs:label xml:lang="pt-br">Ciência da Informação (Online)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/Referenciador_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Referenciador_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Referenciador"/>
+        <nome>Library &amp; Information Science Abstracts</nome>
+        <nome>Library &amp; information science abstracts</nome>
+        <rdfs:comment xml:lang="pt-br">Instância da classe Referenciador</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Library &amp; Information Science Abstracts</rdfs:label>
+        <rdfs:label xml:lang="pt-br">Library &amp; information science abstracts</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/Tabela_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Tabela_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#TabelaAreaDeConhecimento"/>
+        <nome>Tabela CAPES</nome>
+        <rdfs:comment xml:lang="pt-br">Instância da classe TabelaAreaDeConhecimento</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Tabela CAPES</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/TermoLivre_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/TermoLivre_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#TermoLivre"/>
+        <nome>CI</nome>
+        <rdfs:comment xml:lang="pt-br">Instância da classe TermoLivre</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">CI</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/TipoDeBiblioteca_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/TipoDeBiblioteca_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#TipoDeBiblioteca"/>
+        <nome>Biblioteca Setorial</nome>
+        <rdfs:comment xml:lang="pt-br">Instância da classe TipoDeBiblioteca</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Biblioteca Setorial</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://pinakes.prd.ibict.br/resource/TituloComplementar_1 -->
+
+    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/TituloComplementar_1">
+        <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#TituloComplementar"/>
+        <nome>Ciênc. Inf.</nome>
+        <rdfs:comment xml:lang="pt-br">Instância da classe TituloComplementar</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Ciênc. Inf.</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

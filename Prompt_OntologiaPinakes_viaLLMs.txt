@@ -1,0 +1,160 @@
+ Prompt para Geração da Ontologia Pinakes
+
+**Objetivo**:  
+Você é um especialista em ontologias bibliográficas. Gere a Ontologia Pinakes completa em RDF/XML a partir das Questões de Competência (QCs) e do Quadro de termos fornecidos. Esta ontologia representa o domínio do CCN do Ibict com estrutura flexível para expansão futura a outros sistemas bibliográficos.
+
+## **1. Estrutura Básica RDF/XML**
+```xml
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://pinakes.prd.ibict.br/ontology/pinakes#"
+     xml:base="http://pinakes.prd.ibict.br/ontology/pinakes"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    
+    <owl:Ontology rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes">
+        <dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://creativecommons.org/licenses/by/4.0/</dc:rights>
+        <rdfs:comment xml:lang="pt-br">Esta Ontologia foi desenvolvida com base nos modelos LRM e PRESSoo, para a representação do domínio de serviços bibliográficos.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Modelo de dados que representa um conjunto de conceitos e os relacionamentos que abrangem os serviços bibliográficos integrados ao projeto Pinakes.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="pt-br">Ontologia Pinakes</rdfs:label>
+        <owl:versionInfo>1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+    <!-- Aqui deve vir todo o conteúdo da ontologia -->
+</rdf:RDF>
+```
+
+## **2. Diretrizes para Classificação e Modelagem**
+
+### **2.1 Classes**
+- **Nomenclatura**: Português sem acentos (ex: `PublicacaoSeriada`, `AreaDeConhecimento`)
+- **Hierarquia**: Implementar alinhamento com LRM conforme Quadro 4:
+  - Todas as classes herdam da superclasse `Res` (equivalente a LRM-E1)
+  - Exemplos de hierarquia:
+    - `PublicacaoSeriada` ⊑ `Obra` ⊑ `Res`
+    - `ISSN` ⊑ `Nomen` ⊑ `Res`
+    - `Biblioteca` ⊑ `AgenteColetivo` ⊑ `Agente` ⊑ `Res`
+    - `Localidade` ⊑ `Lugar` ⊑ `Res`
+
+### **2.2 Propriedades de Dados (DatatypeProperty)**
+- **Nomenclatura**: camelCase (ex: `tituloProprio`, `dataDeCadastro`)
+- **Domínio/Alcance**: Sempre explícitos
+- **Tipos de dados**: Usar tipos XSD apropriados:
+  - `xsd:string` para textos
+  - `xsd:dateTime` não usar para datas. Se tiver Propriedades de dados relacionados a ano, datas nos quadros, 2 e 3, troque o `xsd:dateTime` para o tipo de dado rdfs:Literal
+  - `xsd:decimal` para coordenadas
+  - `xsd:anyURI` para URLs
+- **Hierarquia**: Criar subpropriedades quando aplicável:
+  - `designacaoNumerica` com subpropriedades `volume`, `numero`, `edicao`
+
+### **2.3 Propriedades de Objeto (ObjectProperty)**
+- **Nomenclatura**: Usar padrão com prefixos `has`, `is` (ex: `hasISSN`, `isPublisherOf`)
+- **Labels**: Em português com "tem", "possui", "é" (ex: "tem ISSN", "é publicado por")
+- **Inversas**: Criar propriedades inversas quando apropriado
+- **Domínio/Alcance**: Sempre únicos para evitar ambiguidade
+- **Diferenciação**: Usar sufixos quando necessário (ex: `hasPartObra`, `hasPartLugar`)
+
+### **2.4 Restrições de Cardinalidade**
+Implementar conforme especificado nas QCs:
+- `owl:cardinality` para cardinalidade exata
+- `owl:minCardinality` para mínimo
+- `owl:maxCardinality` para máximo
+
+### **2.5 Instâncias (Indivíduos)**
+- **Nomenclatura**: Classe + número sequencial (ex: `Obra_1`, `ISSN_1`)
+- **Namespace**: `http://pinakes.prd.ibict.br/resource/`
+- **Dados**: Incluir todos os exemplos das QCs, especialmente a publicação "Ciência da Informação"
+
+## **3. Modelagem de Relações Complexas**
+
+### **3.1 Cadeias de Relacionamentos**
+Implementar as seguintes estruturas:
+- `Biblioteca` → `Endereco` → `Localidade` → `UnidadeFederativa` → `Regiao` → `Pais`
+- `Biblioteca` → `Colecao` → `PublicacaoSeriada`
+- `PublicacaoSeriada` → `PublicacaoImprenta` → `Editora`
+- `PublicacaoSeriada` → `PublicacaoImprenta` → `Localidade`
+
+### **3.2 Casos Especiais de Localização (QC56-58)**
+Modelar estrutura geográfica completa:
+```xml
+<Endereco rdf:about="http://pinakes.prd.ibict.br/resource/Endereco_1">
+    <rdfs:label xml:lang="pt-br">Endereço Ibict</rdfs:label>
+    <logradouro>Quadra 05, Lote 06, Bloco H 5º andar</logradouro>
+    <cep>70070-912</cep>
+    <latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-15.80427053822864</latitude>
+    <longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-47.88183731527158</longitude>
+    <isLocatedIn rdf:resource="http://pinakes.prd.ibict.br/resource/Localidade_1"/>
+</Endereco>
+```
+
+## **4. Requisitos de Qualidade**
+
+### **4.1 Anotações Obrigatórias**
+Todas as entidades devem ter:
+- `rdfs:label` em português brasileiro
+- `rdfs:comment` com definição clara
+- `rdfs:isDefinedBy` quando apropriado
+
+### **4.2 Consistência Terminológica**
+- Evitar redundâncias e ambiguidades
+- Usar terminologia do domínio bibliográfico
+- Manter consistência com modelos LRM/PRESSoo
+
+### **4.3 Instâncias Representativas**
+Incluir principalmente:
+- Publicação "Ciência da Informação" com todos os atributos
+- Biblioteca "Lydia de Queiroz Sambaquy" 
+- Instituição "Ibict"
+- Localização completa (Brasília, DF, Brasil)
+- Todos os exemplos mencionados nas QCs
+
+## **5. Validação e Entrega**
+
+### **5.1 Arquivo de Saída**
+- **Nome**: `OntologiaPinakes_[NomeLLM].owl` para Dowload
+- **Formato**: RDF/XML válido
+- **Codificação**: UTF-8
+- **Estrutura**: Completa e pronta para uso
+
+### **5.2 Verificações Finais**
+- Sintaxe RDF/XML válida
+- Todas as classes do Quadro 3 implementadas
+- Todas as propriedades com domínio/alcance corretos
+- Instâncias com dados das QCs
+- Hierarquia de classes conforme alinhamento LRM
+- Cardinalidades implementadas conforme especificado
+-Anotações de todas as entidades de todas as classes, propriedades de dados e de objetos devem incluir  `rdfs:label`, `rdfs:comment` e `rdfs:isDefinedBy`em português brasileiro.
+-Os nomes de todos os termos Criados Classe, Propriedades, relacionamentos e intancias deve ser exatamente como exemplificado na segunda coluna do quadro 3. 
+
+## **6. Exemplo de Instância Completa**
+
+```xml
+<PublicacaoSeriada rdf:about="http://pinakes.prd.ibict.br/resource/Obra_1">
+    <rdfs:label xml:lang="pt-br">Ciência da Informação</rdfs:label>
+    <rdfs:comment xml:lang="pt-br">Publicação seriada do Instituto Brasileiro de Informação em Ciência e Tecnologia</rdfs:comment>
+    <tituloProprio>Ciência da Informação</tituloProprio>
+    <alfabetacao rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</alfabetacao>
+    <anoInicial rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1972</anoInicial>
+    <anoFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2015</anoFinal>
+    <frequencia>quadrimestral</frequencia>
+    <situacaoDaPublicacao>Descontinuada</situacaoDaPublicacao>
+    <hasISSN rdf:resource="http://pinakes.prd.ibict.br/resource/ISSN_1"/>
+    <hasPublicationImprenta rdf:resource="http://pinakes.prd.ibict.br/resource/PublicacaoImprenta_1"/>
+    <!-- Outros relacionamentos -->
+</PublicacaoSeriada>
+```
+
+## **7. Instrução Final**
+
+**IMPORTANTE**: Gere um arquivo RDF/XML completo e funcional que:
+1. Contenha TODAS as classes, propriedades e instâncias identificadas
+2. Seja sintáticamente válido
+3. Possa ser importado diretamente no Protégé
+4. Inclua exemplos representativos das QCs
+5. Mantenha a estrutura hierárquica especificada
+6. Seja pronto para download e uso imediato
+
+O arquivo deve começar com `<?xml version="1.0"?>` e ser um RDF/XML completo e bem formado.
