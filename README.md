@@ -22,10 +22,11 @@ A ontologia foi gerada automaticamente a partir das especificações textuais, u
 
 ## 🔍 Como visualizar
 
-Para explorar a ontologia:
-1. Abra o arquivo `.owl` no [Protégé](https://protege.stanford.edu/).
+Para explorar as ontologias geradas:
+1. Abra os arquivos `.owl` no [Protégé](https://protege.stanford.edu/).
 2. Navegue pelas classes, propriedades e instâncias geradas.
-3. Execute consultas SPARQL ou use as visualizações hierárquicas para explorar o modelo.
+3. Compare as Ontologias geradas pelos LLMs com a OntologiaPinakes_Protege.owlgerada manualmente
+4. Execute consultas SPARQL ou use as visualizações hierárquicas para explorar os modelos.
 
 ## 📝 Licença
 
