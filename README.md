@@ -7,11 +7,11 @@ Este repositório contém os artefatos do projeto de geração da **Ontologia Pi
 - `EspecificacaoDeRequisitos.docx`  
   Documento com 59 Questões de Competência (QCs), quadros conceituais e alinhamentos que serviram como base para a construção da ontologia.
 
-- `PromptOntologia.txt`  
+- `Prompt_OntologiaPinakes_viaLLMs.txt`  
   Prompt detalhado elaborado para orientar modelos de linguagem de grande escala (LLMs) na geração automática da ontologia.
 
 - `OntologiaPinakes_*.owl`  
-  Arquivos RDF/XML gerados pelos LLMs (ex: GPT-4o, Claude, Gemini), representando a Ontologia Pinakes conforme as especificações.
+  Arquivos RDF/XML gerados automaticamente pelos LLMs (ex: GPT-4o, Claude, Gemini) e manualmente no Protégé, representando a Ontologia Pinakes conforme as especificações.
 
 ## 🧩 Metodologia resumida
 
