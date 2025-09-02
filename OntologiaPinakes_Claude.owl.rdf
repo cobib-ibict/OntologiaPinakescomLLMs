@@ -1,595 +1,4 @@
-<owl:ObjectProperty rdf:about="#isPlacePublicationOf">
-        <owl:inverseOf rdf:resource="#hasPlacePublication"/>
-        <rdfs:domain rdf:resource="#Localidade"/>
-        <rdfs:range rdf:resource="#PublicacaoImprenta"/>
-        <rdfs:label xml:lang="pt-br">é local de publicação de</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma localidade com as obras nela publicadas.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga localidade às publicações.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#hasControlledSubject">
-        <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:range rdf:resource="#AssuntoControlado"/>
-        <rdfs:label xml:lang="pt-br">tem assunto controlado</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com termos de indexação controlada.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre obra e descritores padronizados.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#isControlledSubjectOf">
-        <owl:inverseOf rdf:resource="#hasControlledSubject"/>
-        <rdfs:domain rdf:resource="#AssuntoControlado"/>
-        <rdfs:range rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:label xml:lang="pt-br">é assunto controlado de</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona um termo controlado com as publicações que indexa.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta assunto às obras.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#hasPublicationDate">
-        <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:range rdf:resource="#PublicacaoImprenta"/>
-        <rdfs:label xml:lang="pt-br">tem data de publicação</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com suas informações de imprenta.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre obra e dados temporais e editoriais.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#isPublicationDateOf">
-        <owl:inverseOf rdf:resource="#hasPublicationDate"/>
-        <rdfs:domain rdf:resource="#PublicacaoImprenta"/>
-        <rdfs:range rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:label xml:lang="pt-br">é data de publicação de</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona informações de imprenta com a publicação.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga imprenta à obra.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#hasAdminNature">
-        <rdfs:domain rdf:resource="#Instituicao"/>
-        <rdfs:range rdf:resource="#NaturezaAdministrativa"/>
-        <rdfs:label xml:lang="pt-br">tem natureza administrativa</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma instituição com sua categoria administrativa.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre organização e classificação jurídico-administrativa.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#isAdminNatureOf">
-        <owl:inverseOf rdf:resource="#hasAdminNature"/>
-        <rdfs:domain rdf:resource="#NaturezaAdministrativa"/>
-        <rdfs:range rdf:resource="#Instituicao"/>
-        <rdfs:label xml:lang="pt-br">é natureza administrativa de</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma categoria com as instituições que a possuem.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta natureza às instituições.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#hasTitleComplement">
-        <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:range rdf:resource="#TituloComplementar"/>
-        <rdfs:label xml:lang="pt-br">tem título complementar</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com seus títulos alternativos.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre obra principal e variações do título.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#isTitleComplementOf">
-        <owl:inverseOf rdf:resource="#hasTitleComplement"/>
-        <rdfs:domain rdf:resource="#TituloComplementar"/>
-        <rdfs:range rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:label xml:lang="pt-br">é título complementar de</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona um título complementar com a publicação.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga título complementar à obra.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#hasFreeTerm">
-        <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:range rdf:resource="#TermoLivre"/>
-        <rdfs:label xml:lang="pt-br">tem termo livre</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com termos de indexação livre.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre obra e palavras-chave não controladas.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#isFreeTermOf">
-        <owl:inverseOf rdf:resource="#hasFreeTerm"/>
-        <rdfs:domain rdf:resource="#TermoLivre"/>
-        <rdfs:range rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:label xml:lang="pt-br">é termo livre de</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona um termo livre com as publicações que descreve.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta termo livre às obras.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#indexedBy">
-        <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:range rdf:resource="#Referenciador"/>
-        <rdfs:label xml:lang="pt-br">indexada por</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com os serviços que a indexam.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre obra e bases de dados de indexação.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#isIndexOf">
-        <owl:inverseOf rdf:resource="#indexedBy"/>
-        <rdfs:domain rdf:resource="#Referenciador"/>
-        <rdfs:range rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:label xml:lang="pt-br">é índice de</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona um referenciador com as publicações que indexa.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga referenciador às obras.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#hasLibraryType">
-        <rdfs:domain rdf:resource="#Biblioteca"/>
-        <rdfs:range rdf:resource="#TipoDeBiblioteca"/>
-        <rdfs:label xml:lang="pt-br">tem tipo de biblioteca</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma biblioteca com sua classificação tipológica.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre biblioteca e categoria funcional.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#isLibraryTypeOf">
-        <owl:inverseOf rdf:resource="#hasLibraryType"/>
-        <rdfs:domain rdf:resource="#TipoDeBiblioteca"/>
-        <rdfs:range rdf:resource="#Biblioteca"/>
-        <rdfs:label xml:lang="pt-br">é tipo de biblioteca de</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona um tipo com as bibliotecas que o exemplificam.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta tipo às bibliotecas.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#contains">
-        <rdfs:domain rdf:resource="#Colecao"/>
-        <rdfs:range rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:label xml:lang="pt-br">contém</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma coleção com as publicações que inclui.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre acervo e itens bibliográficos.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#isContainedIn">
-        <owl:inverseOf rdf:resource="#contains"/>
-        <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:range rdf:resource="#Colecao"/>
-        <rdfs:label xml:lang="pt-br">está contida em</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com a coleção que a inclui.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga publicação à coleção.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <!-- Propriedades geográficas -->
-    <owl:ObjectProperty rdf:about="#isLocatedIn">
-        <rdfs:domain rdf:resource="#Endereco"/>
-        <rdfs:range rdf:resource="#Localidade"/>
-        <rdfs:label xml:lang="pt-br">está localizado em</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona um endereço com a localidade onde se situa.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre endereço específico e cidade.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#hasAffiliation">
-        <rdfs:domain rdf:resource="#Biblioteca"/>
-        <rdfs:range rdf:resource="#Instituicao"/>
-        <rdfs:label xml:lang="pt-br">tem afiliação</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma biblioteca com a instituição à qual pertence.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre biblioteca e organização mantenedora.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="#isAffiliatedWith">
-        <owl:inverseOf rdf:resource="#hasAffiliation"/>
-        <rdfs:domain rdf:resource="#Instituicao"/>
-        <rdfs:range rdf:resource="#Biblioteca"/>
-        <rdfs:label xml:lang="pt-br">é afiliada com</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma instituição com suas bibliotecas vinculadas.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta instituição às bibliotecas.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <!-- Propriedades simétricas -->
-    <owl:ObjectProperty rdf:about="#isAssociationOf">
-        <rdfs:domain rdf:resource="#Unidade"/>
-        <rdfs:range rdf:resource="#Unidade"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdfs:label xml:lang="pt-br">é associação de</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona unidades organizacionais entre si.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Conexão simétrica entre unidades administrativas.</rdfs:isDefinedBy>
-    </owl:ObjectProperty>
-
-    <!-- ==============================================
-         INSTÂNCIAS (INDIVIDUALS) - NAMESPACE CORRETO
-         ============================================== -->
-
-    <!-- Publicação principal -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Obra_1">
-        <rdf:type rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:label xml:lang="pt-br">Ciência da Informação</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Publicação seriada do Instituto Brasileiro de Informação em Ciência e Tecnologia</rdfs:comment>
-        <tituloProprio>Ciência da Informação</tituloProprio>
-        <alfabetacao>0</alfabetacao>
-        <anoInicial>1972</anoInicial>
-        <anoFinal>2015</anoFinal>
-        <frequencia>quadrimestral</frequencia>
-        <situacaoDaPublicacao>Descontinuada</situacaoDaPublicacao>
-        <statusDoRegistro>Alterado</statusDoRegistro>
-        <nivelDeCatalogacao>Nível central</nivelDeCatalogacao>
-        <nivelBibliografico>Periódico</nivelBibliografico>
-        <tipoDeRegistro>Material textual impresso</tipoDeRegistro>
-        <formatoDeCatalogacao>AACR2</formatoDeCatalogacao>
-        <volume>1</volume>
-        <numero>1</numero>
-        <hasISSN rdf:resource="http://pinakes.prd.ibict.br/resource/ISSN_1"/>
-        <hasPublicationDate rdf:resource="http://pinakes.prd.ibict.br/resource/PublicacaoImprenta_1"/>
-        <hasTitleComplement rdf:resource="http://pinakes.prd.ibict.br/resource/TituloComplementar_1"/>
-        <hasFreeTerm rdf:resource="http://pinakes.prd.ibict.br/resource/TermoLivre_1"/>
-        <indexedBy rdf:resource="http://pinakes.prd.ibict.br/resource/Referenciador_1"/>
-        <hasHomepage rdf:resource="http://pinakes.prd.ibict.br/resource/Homepage_1"/>
-        <hasKnowledgeField rdf:resource="http://pinakes.prd.ibict.br/resource/AreaDeConhecimento_1"/>
-        <hasControlledSubject rdf:resource="http://pinakes.prd.ibict.br/resource/AssuntoControlado_1"/>
-        <hasRelatedPublication rdf:resource="http://pinakes.prd.ibict.br/resource/PublicacaoRelacionada_1"/>
-        <isContainedIn rdf:resource="http://pinakes.prd.ibict.br/resource/Colecao_1"/>
-    </owl:NamedIndividual>
-
-    <!-- ISSN -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/ISSN_1">
-        <rdf:type rdf:resource="#ISSN"/>
-        <rdfs:label xml:lang="pt-br">0100-1965</rdfs:label>
-        <nome>0100-1965</nome>
-        <hasSupport rdf:resource="http://pinakes.prd.ibict.br/resource/MeioFisico_1"/>
-    </owl:NamedIndividual>
-
-    <!-- Meio Físico -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/MeioFisico_1">
-        <rdf:type rdf:resource="#MeioFisico"/>
-        <rdfs:label xml:lang="pt-br">Impresso</rdfs:label>
-        <nome>Impresso</nome>
-    </owl:NamedIndividual>
-
-    <!-- Coleção -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Colecao_1">
-        <rdf:type rdf:resource="#Colecao"/>
-        <rdfs:label xml:lang="pt-br">IBICT/BT</rdfs:label>
-        <nome>IBICT/BT</nome>
-        <formatoDocumento>JSON</formatoDocumento>
-        <contains rdf:resource="http://pinakes.prd.ibict.br/resource/Obra_1"/>
-    </owl:NamedIndividual>
-
-    <!-- Contato -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Contato_1">
-        <rdf:type rdf:resource="#Contato"/>
-        <rdfs:label xml:lang="pt-br">Contato Principal</rdfs:label>
-        <principal>(61)32176145</principal>
-    </owl:NamedIndividual>
-
-    <!-- Assunto Controlado -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/AssuntoControlado_1">
-        <rdf:type rdf:resource="#AssuntoControlado"/>
-        <rdfs:label xml:lang="pt-br">Organização da Informação</rdfs:label>
-        <nome>Organização da Informação</nome>
-        <fonte>Tesauro Brasileiro de Ciência da Informação</fonte>
-    </owl:NamedIndividual>
-
-    <!-- Publicação Relacionada -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/PublicacaoRelacionada_1">
-        <rdf:type rdf:resource="#PublicacaoRelacionada"/>
-        <rdfs:label xml:lang="pt-br">Ciência da Informação (Online)</rdfs:label>
-        <nome>Ciência da Informação (Online)</nome>
-    </owl:NamedIndividual>
-
-    <!-- Idioma -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Idioma_1">
-        <rdf:type rdf:resource="#Idioma"/>
-        <rdfs:label xml:lang="pt-br">português</rdfs:label>
-        <nome>português</nome>
-        <sigla>POR</sigla>
-    </owl:NamedIndividual>
-
-    <!-- Tabela de Área de Conhecimento -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Tabela_1">
-        <rdf:type rdf:resource="#TabelaAreaDeConhecimento"/>
-        <rdfs:label xml:lang="pt-br">Tabela de áreas do conhecimento /avaliação CAPES</rdfs:label>
-        <nome>Tabela de áreas do conhecimento /avaliação CAPES</nome>
-    </owl:NamedIndividual>
-
-    <!-- Biblioteca -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Biblioteca_1">
-        <rdf:type rdf:resource="#Biblioteca"/>
-        <rdfs:label xml:lang="pt-br">Lydia de Queiroz Sambaquy</rdfs:label>
-        <nome>Lydia de Queiroz Sambaquy</nome>
-        <softwareUtilizado>Koha</softwareUtilizado>
-        <sigla>LQS</sigla>
-        <urlDoCatalogo rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://biblioteca.ibict.br</urlDoCatalogo>
-        <paginaWeb rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://biblioteca.ibict.br</paginaWeb>
-        <hasAffiliation rdf:resource="http://pinakes.prd.ibict.br/resource/Instituicao_1"/>
-        <hasContact rdf:resource="http://pinakes.prd.ibict.br/resource/Contato_1"/>
-        <hasCollection rdf:resource="http://pinakes.prd.ibict.br/resource/Colecao_1"/>
-        <hasLibraryType rdf:resource="http://pinakes.prd.ibict.br/resource/TipoDeBiblioteca_1"/>
-    </owl:NamedIndividual>
-
-    <!-- Localidade -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Localidade_1">
-        <rdf:type rdf:resource="#Localidade"/>
-        <rdfs:label xml:lang="pt-br">Brasília</rdfs:label>
-        <nome>Brasília</nome>
-    </owl:NamedIndividual>
-
-    <!-- País -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Pais_1">
-        <rdf:type rdf:resource="#Pais"/>
-        <rdfs:label xml:lang="pt-br">Brasil</rdfs:label>
-        <nome>Brasil</nome>
-    </owl:NamedIndividual>
-
-    <!-- Unidade Federativa -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/UnidadeFederativa_1">
-        <rdf:type rdf:resource="#UnidadeFederativa"/>
-        <rdfs:label xml:lang="pt-br">Distrito Federal</rdfs:label>
-        <nome>Distrito Federal</nome>
-        <sigla>DF</sigla>
-    </owl:NamedIndividual>
-
-    <!-- Região -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Regiao_1">
-        <rdf:type rdf:resource="#Regiao"/>
-        <rdfs:label xml:lang="pt-br">Centro-Oeste</rdfs:label>
-        <nome>Centro-Oeste</nome>
-    </owl:NamedIndividual>
-
-    <!-- Título Complementar -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/TituloComplementar_1">
-        <rdf:type rdf:resource="#TituloComplementar"/>
-        <rdfs:label xml:lang="pt-br">Ciênc. Inf.</rdfs:label>
-        <nome>Ciênc. Inf.</nome>
-    </owl:NamedIndividual>
-
-    <!-- Termo Livre -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/TermoLivre_1">
-        <rdf:type rdf:resource="#TermoLivre"/>
-        <rdfs:label xml:lang="pt-br">CI</rdfs:label>
-        <nome>CI</nome>
-    </owl:NamedIndividual>
-
-    <!-- Referenciador -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Referenciador_1">
-        <rdf:type rdf:resource="#Referenciador"/>
-        <rdfs:label xml:lang="pt-br">Library &amp; information science abstracts</rdfs:label>
-        <nome>Library &amp; information science abstracts</nome>
-    </owl:NamedIndividual>
-
-    <!-- Tipo de Biblioteca -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/TipoDeBiblioteca_1">
-        <rdf:type rdf:resource="#TipoDeBiblioteca"/>
-        <rdfs:label xml:lang="pt-br">Biblioteca Setorial</rdfs:label>
-        <nome>Biblioteca Setorial</nome>
-    </owl:NamedIndividual>
-
-    <!-- Publicação Imprenta -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/PublicacaoImprenta_1">
-        <rdf:type rdf:resource="#PublicacaoImprenta"/>
-        <rdfs:label xml:lang="pt-br">Publicação 1972</rdfs:label>
-        <hasPlacePublication rdf:resource="http://pinakes.prd.ibict.br/resource/Localidade_1"/>
-        <hasPublisher rdf:resource="http://pinakes.prd.ibict.br/resource/Editora_1"/>
-    </owl:NamedIndividual>
-
-    <!-- Natureza Administrativa -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/NaturezaAdministrativa_1">
-        <rdf:type rdf:resource="#NaturezaAdministrativa"/>
-        <rdfs:label xml:lang="pt-br">Pública</rdfs:label>
-        <nome>Pública</nome>
-    </owl:NamedIndividual>
-
-    <!-- Homepage -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Homepage_1">
-        <rdf:type rdf:resource="#Homepage"/>
-        <rdfs:label xml:lang="pt-br">Página da Revista Ciência da Informação</rdfs:label>
-        <enderecoEletronico rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://revista.ibict.br/ciinf/article/view/6125</enderecoEletronico>
-    </owl:NamedIndividual>
-
-    <!-- Editora -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Editora_1">
-        <rdf:type rdf:resource="#Editora"/>
-        <rdfs:label xml:lang="pt-br">Instituto Brasileiro de Informação em Ciência e Tecnologia</rdfs:label>
-        <nome>Instituto Brasileiro de Informação em Ciência e Tecnologia</nome>
-        <sigla>Ibict</sigla>
-    </owl:NamedIndividual>
-
-    <!-- Unidade -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Unidade_1">
-        <rdf:type rdf:resource="#Unidade"/>
-        <rdfs:label xml:lang="pt-br">Coordenação de Serviços Bibliográficos</rdfs:label>
-        <nome>Coordenação de Serviços Bibliográficos</nome>
-        <sigla>COBIB</sigla>
-    </owl:NamedIndividual>
-
-    <!-- Endereço com coordenadas -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Endereco_1">
-        <rdf:type rdf:resource="#Endereco"/>
-        <rdfs:label xml:lang="pt-br">Endereço Ibict</rdfs:label>
-        <logradouro>Quadra 05, Lote 06, Bloco H 5º andar</logradouro>
-        <cep>70070-912</cep>
-        <latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-15.80427053822864</latitude>
-        <longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-47.88183731527158</longitude>
-        <isLocatedIn rdf:resource="http://pinakes.prd.ibict.br/resource/Localidade_1"/>
-    </owl:NamedIndividual>
-
-    <!-- Instituição -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Instituicao_1">
-        <rdf:type rdf:resource="#Instituicao"/>
-        <rdfs:label xml:lang="pt-br">Instituto Brasileiro de Informação em Ciência e Tecnologia</rdfs:label>
-        <nome>Instituto Brasileiro de Informação em Ciência e Tecnologia</nome>
-        <sigla>IBICT</sigla>
-        <cnpj>04.082.993/0001-49</cnpj>
-        <hasAdminNature rdf:resource="http://pinakes.prd.ibict.br/resource/NaturezaAdministrativa_1"/>
-    </owl:NamedIndividual>
-
-    <!-- Área de Conhecimento -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/AreaDeConhecimento_1">
-        <rdf:type rdf:resource="#AreaDeConhecimento"/>
-        <rdfs:label xml:lang="pt-br">Ciências Sociais Aplicadas</rdfs:label>
-        <nome>Ciências Sociais Aplicadas</nome>
-        <codigo>60000007</codigo>
-        <hasKnowledgeAreaTable rdf:resource="http://pinakes.prd.ibict.br/resource/Tabela_1"/>
-    </owl:NamedIndividual>
-
-    <!-- Exemplos adicionais das QCs -->
-    
-    <!-- Outras obras mencionadas nas QCs -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Obra_2">
-        <rdf:type rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:label xml:lang="pt-br">A Hora Veterinária</rdfs:label>
-        <tituloProprio>A Hora Veterinária</tituloProprio>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Obra_3">
-        <rdf:type rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:label xml:lang="pt-br">Wines &amp; Vines Yearbook of the Wine Industry</rdfs:label>
-        <tituloProprio>Wines &amp; Vines Yearbook of the Wine Industry</tituloProprio>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Obra_4">
-        <rdf:type rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:label xml:lang="pt-br">Wine Review (Los Angeles)</rdfs:label>
-        <tituloProprio>Wine Review (Los Angeles)</tituloProprio>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Obra_5">
-        <rdf:type rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:label xml:lang="pt-br">BIB: revista brasileira de informação bibliográfica em Ciências Sociais</rdfs:label>
-        <tituloProprio>BIB: revista brasileira de informação bibliográfica em Ciências Sociais</tituloProprio>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Obra_6">
-        <rdf:type rdf:resource="#Obra"/>
-        <rdfs:label xml:lang="pt-br">Eine Kleine Nachtmusik</rdfs:label>
-        <tituloProprio>Eine Kleine Nachtmusik</tituloProprio>
-        <tipoDeRegistro>Música impressa</tipoDeRegistro>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Obra_7">
-        <rdf:type rdf:resource="#PublicacaoSeriada"/>
-        <rdfs:label xml:lang="pt-br">Bibliografia Brasileira de Documentação</rdfs:label>
-        <tituloProprio>Bibliografia Brasileira de Documentação</tituloProprio>
-    </owl:NamedIndividual>
-
-    <!-- ISSN adicional (online) -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/ISSN_2">
-        <rdf:type rdf:resource="#ISSN"/>
-        <rdfs:label xml:lang="pt-br">1518-8353</rdfs:label>
-        <nome>1518-8353</nome>
-        <hasSupport rdf:resource="http://pinakes.prd.ibict.br/resource/MeioFisico_2"/>
-    </owl:NamedIndividual>
-
-    <!-- Meio Físico Digital -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/MeioFisico_2">
-        <rdf:type rdf:resource="#MeioFisico"/>
-        <rdfs:label xml:lang="pt-br">Texto Digital</rdfs:label>
-        <nome>Digital</nome>
-    </owl:NamedIndividual>
-
-    <!-- Outras naturezas administrativas -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/NaturezaAdministrativa_2">
-        <rdf:type rdf:resource="#NaturezaAdministrativa"/>
-        <rdfs:label xml:lang="pt-br">Pública Estadual</rdfs:label>
-        <nome>Pública Estadual</nome>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/NaturezaAdministrativa_3">
-        <rdf:type rdf:resource="#NaturezaAdministrativa"/>
-        <rdfs:label xml:lang="pt-br">Pública Municipal</rdfs:label>
-        <nome>Pública Municipal</nome>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/NaturezaAdministrativa_4">
-        <rdf:type rdf:resource="#NaturezaAdministrativa"/>
-        <rdfs:label xml:lang="pt-br">Autarquia</rdfs:label>
-        <nome>Autarquia</nome>
-    </owl:NamedIndividual>
-
-    <!-- Tipo de Biblioteca Central -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/TipoDeBiblioteca_2">
-        <rdf:type rdf:resource="#TipoDeBiblioteca"/>
-        <rdfs:label xml:lang="pt-br">Biblioteca Central</rdfs:label>
-        <nome>Biblioteca Central</nome>
-    </owl:NamedIndividual>
-
-    <!-- Instituição adicional (MCTI) -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Instituicao_2">
-        <rdf:type rdf:resource="#Instituicao"/>
-        <rdfs:label xml:lang="pt-br">Ministério de Ciência, Tecnologia e Inovação</rdfs:label>
-        <nome>Ministério de Ciência, Tecnologia e Inovação</nome>
-        <sigla>MCTI</sigla>
-        <cnpj>03.132.745/0001-00</cnpj>
-    </owl:NamedIndividual>
-
-    <!-- Notas explicativas -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Nota_1">
-        <rdf:type rdf:resource="#Nota"/>
-        <rdfs:label xml:lang="pt-br">Nota Geral - Disponibilidade Online</rdfs:label>
-        <notasGerais>Disponível online, em texto integral de 1995 - presente, no portal de periódicos da CAPES</notasGerais>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Nota_2">
-        <rdf:type rdf:resource="#Nota"/>
-        <rdfs:label xml:lang="pt-br">Nota de Suplemento - Wines &amp; Vines</rdfs:label>
-        <notaSuplemento>Wines &amp; Vines Yearbook of the Wine Industry (ISSN 0271-5694) tem suplemento: Wines &amp; Vines Annual Directory (ISSN 0084-0351)</notaSuplemento>
-    </owl:NamedIndividual>
-
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Nota_3">
-        <rdf:type rdf:resource="#Nota"/>
-        <rdfs:label xml:lang="pt-br">Nota de Complexidade - Wine Review</rdfs:label>
-        <notaComplexidade>Wine Review (Los Angeles) (ISSN 0096-8471) absorveu: Wine East (ISSN 0892-662X)</notaComplexidade>
-    </owl:NamedIndividual>
-
-    <!-- Referenciadores adicionais -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Referenciador_2">
-        <rdf:type rdf:resource="#Referenciador"/>
-        <rdfs:label xml:lang="pt-br">Information science abstracts</rdfs:label>
-        <nome>Information science abstracts</nome>
-    </owl:NamedIndividual>
-
-    <!-- Assunto controlado adicional -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/AssuntoControlado_2">
-        <rdf:type rdf:resource="#AssuntoControlado"/>
-        <rdfs:label xml:lang="pt-br">Ciência da Informação</rdfs:label>
-        <nome>Ciência da Informação</nome>
-        <fonte>Tesaurus Spines</fonte>
-    </owl:NamedIndividual>
-
-    <!-- Idioma adicional -->
-    <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/resource/Idioma_2">
-        <rdf:type rdf:resource="#Idioma"/>
-        <rdfs:label xml:lang="pt-br">inglês</rdfs:label>
-        <nome>inglês</nome>
-        <sigla>ENG</sigla>
-    </owl:NamedIndividual>
-
-    <!-- Restrições de cardinalidade conforme QCs -->
-    
-    <!-- Uma obra deve ter pelo menos um título próprio -->
-    <owl:Class rdf:about="#Obra">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#tituloProprio"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-
-    <!-- Uma publicação seriada deve ter pelo menos um ISSN -->
-    <owl:Class rdf:about="#PublicacaoSeriada">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#hasISSN"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-
-    <!-- Uma biblioteca deve ter exatamente uma afiliação institucional -->
-    <owl:Class rdf:about="#Biblioteca">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#hasAffiliation"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-
-    <!-- Um endereço deve ter exatamente uma localidade -->
-    <owl:Class rdf:about="#Endereco">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#isLocatedIn"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-
-</rdf:RDF>adas</rdfs:label>
-        <nome>Ciências Sociais Aplic<?xml version="1.0"?>
+<?xml version="1.0"?>
 <rdf:RDF xmlns="http://pinakes.prd.ibict.br/ontology/pinakes#"
      xml:base="http://pinakes.prd.ibict.br/ontology/pinakes"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -608,266 +17,266 @@
     </owl:Ontology>
 
     <!-- ==============================================
-         CLASSES - HIERARQUIA BASEADA NO ALINHAMENTO LRM
+         CLASSES HIERÁRQUICAS BASEADAS NO ALINHAMENTO LRM
          ============================================== -->
 
-    <!-- Classe raiz conforme LRM-E1 -->
+    <!-- Classe raiz Res do LRM -->
     <owl:Class rdf:about="#Res">
         <rdfs:label xml:lang="pt-br">Recurso</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Classe raiz que representa qualquer entidade do modelo LRM.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Entidade fundamental do IFLA LRM que engloba todos os recursos bibliográficos.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Classe raiz que representa qualquer recurso do modelo LRM. Superclasse de todas as entidades bibliográficas.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Entidade fundamental do IFLA LRM que engloba tudo que pode ser identificado.</rdfs:isDefinedBy>
     </owl:Class>
 
     <!-- Superclasses do LRM -->
     <owl:Class rdf:about="#Obra">
         <rdfs:subClassOf rdf:resource="#Res"/>
         <rdfs:label xml:lang="pt-br">Obra</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Criação intelectual ou artística distinta.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Entidade LRM-E2 que representa o conteúdo conceitual de uma criação.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Criação intelectual ou artística distinta, expressa em linguagem, música, forma notacional ou movimento.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Entidade do IFLA LRM que representa o conteúdo conceitual distinto de uma criação.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Expressao">
         <rdfs:subClassOf rdf:resource="#Res"/>
         <rdfs:label xml:lang="pt-br">Expressão</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Realização intelectual ou artística de uma obra.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Entidade LRM-E3 que representa a forma específica de realização de uma obra.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Realização intelectual ou artística de uma obra na forma de notação alfa-numérica, musical ou coreográfica, som, imagem, objeto ou movimento.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Entidade do IFLA LRM que representa a forma específica na qual uma obra é realizada.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Manifestacao">
         <rdfs:subClassOf rdf:resource="#Res"/>
         <rdfs:label xml:lang="pt-br">Manifestação</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Conjunto de características físicas que corporificam uma expressão.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Entidade LRM-E4 que representa a materialização física de uma expressão.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Conjunto de características físicas compartilhadas por exemplares que corporificam a mesma expressão de uma obra.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Entidade do IFLA LRM que representa a forma física na qual uma expressão é materializada.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Item">
         <rdfs:subClassOf rdf:resource="#Res"/>
         <rdfs:label xml:lang="pt-br">Item</rdfs:label>
         <rdfs:comment xml:lang="pt-br">Exemplar individual de uma manifestação.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Entidade LRM-E5 que representa um objeto físico específico.</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy xml:lang="pt-br">Entidade do IFLA LRM que representa um objeto físico ou digital específico.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Agente">
         <rdfs:subClassOf rdf:resource="#Res"/>
         <rdfs:label xml:lang="pt-br">Agente</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Entidade capaz de ação deliberada.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Entidade LRM-E6 que representa pessoas ou organizações ativas.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Entidade capaz de ação deliberada, responsável pela custódia, propriedade ou criação de recursos.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Entidade do IFLA LRM que representa pessoas ou organizações que agem sobre recursos.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#AgenteColetivo">
         <rdfs:subClassOf rdf:resource="#Agente"/>
         <rdfs:label xml:lang="pt-br">Agente Coletivo</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Organização ou grupo de pessoas identificado por um nome.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Entidade LRM-E8 que representa organizações, corporações ou grupos.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Organização ou grupo de pessoas ou organizações identificado por um nome particular.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Subtipo de agente que representa organizações, corporações, famílias ou grupos.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Nomen">
         <rdfs:subClassOf rdf:resource="#Res"/>
         <rdfs:label xml:lang="pt-br">Nome</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Denominação, designação ou identificador de uma entidade.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Entidade LRM-E9 para representar nomes e identificadores.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Denominação, designação, título ou qualquer combinação de palavras ou caracteres que serve para identificar uma entidade.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Entidade do IFLA LRM para representar nomes, títulos e identificadores.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Lugar">
         <rdfs:subClassOf rdf:resource="#Res"/>
         <rdfs:label xml:lang="pt-br">Lugar</rdfs:label>
         <rdfs:comment xml:lang="pt-br">Extensão específica de espaço tridimensional.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Entidade LRM-E10 que representa localizações geográficas.</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy xml:lang="pt-br">Entidade do IFLA LRM que representa localizações geográficas ou conceituais.</rdfs:isDefinedBy>
     </owl:Class>
 
-    <!-- Classes específicas do CCN baseadas na hierarquia do Quadro 4 -->
+    <!-- Classes específicas do CCN baseadas na hierarquia -->
     <owl:Class rdf:about="#PublicacaoSeriada">
         <rdfs:subClassOf rdf:resource="#Obra"/>
         <rdfs:label xml:lang="pt-br">Publicação Seriada</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Publicação editada em unidades sucessivas com continuidade indefinida.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Tipo específico de obra caracterizada pela periodicidade.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Publicação em qualquer suporte físico, editada em unidades sucessivas, numeradas ou datadas, com intenção de continuidade indefinida.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Tipo específico de obra caracterizada pela continuidade e periodicidade de publicação.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#PublicacaoRelacionada">
         <rdfs:subClassOf rdf:resource="#Obra"/>
         <rdfs:label xml:lang="pt-br">Publicação Relacionada</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Obra que possui relação bibliográfica com outra obra.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Obra vinculada através de continuação, fusão ou outros tipos de ligação.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Obra que possui relação bibliográfica com outra obra através de continuação, fusão, divisão ou outros tipos de ligação.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Obra que mantém vínculos específicos com outras obras do catálogo.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Idioma">
         <rdfs:subClassOf rdf:resource="#Expressao"/>
         <rdfs:label xml:lang="pt-br">Idioma</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Sistema de comunicação verbal ou escrito.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Forma linguística específica de expressão de uma obra.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Sistema de comunicação verbal ou escrito usado para expressar uma obra.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Forma linguística na qual uma obra é expressa.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#MeioFisico">
         <rdfs:subClassOf rdf:resource="#Manifestacao"/>
         <rdfs:label xml:lang="pt-br">Meio Físico</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Suporte material ou formato de uma manifestação.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Características físicas ou digitais de apresentação.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Suporte material ou formato em que uma manifestação é disponibilizada.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Características físicas ou digitais que definem como uma manifestação se apresenta.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Colecao">
         <rdfs:subClassOf rdf:resource="#Item"/>
         <rdfs:label xml:lang="pt-br">Coleção</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Conjunto de itens bibliográficos organizados.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Agrupamento específico de recursos mantidos por uma biblioteca.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Conjunto de itens bibliográficos organizados e mantidos por uma biblioteca.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Agrupamento de itens específicos que constituem o acervo de uma instituição.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Editora">
         <rdfs:subClassOf rdf:resource="#Agente"/>
         <rdfs:label xml:lang="pt-br">Editora</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Agente responsável pela edição e publicação.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Entidade que assume responsabilidade editorial de uma publicação.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Agente responsável pela edição e publicação de obras.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Entidade que assume a responsabilidade editorial e comercial de uma publicação.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Biblioteca">
         <rdfs:subClassOf rdf:resource="#AgenteColetivo"/>
         <rdfs:label xml:lang="pt-br">Biblioteca</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Organização responsável por serviços bibliográficos.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Instituição dedicada à coleta, organização e disponibilização de recursos.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Organização responsável por coletar, organizar, preservar e disponibilizar recursos informacionais.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Instituição dedicada aos serviços bibliográficos e informacionais.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Unidade">
         <rdfs:subClassOf rdf:resource="#AgenteColetivo"/>
         <rdfs:label xml:lang="pt-br">Unidade</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Divisão organizacional dentro de uma instituição.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Divisão organizacional ou departamento dentro de uma instituição.</rdfs:comment>
         <rdfs:isDefinedBy xml:lang="pt-br">Subdivisão administrativa de uma organização maior.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Instituicao">
         <rdfs:subClassOf rdf:resource="#AgenteColetivo"/>
         <rdfs:label xml:lang="pt-br">Instituição</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Organização estabelecida para fins específicos.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Entidade coletiva com estrutura organizacional formal.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Organização estabelecida para fins específicos, como educação, pesquisa ou serviços públicos.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Entidade coletiva com estrutura organizacional formal e objetivos definidos.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#ISSN">
         <rdfs:subClassOf rdf:resource="#Nomen"/>
         <rdfs:label xml:lang="pt-br">ISSN</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Número Internacional Normalizado para Publicações Seriadas.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Identificador único padronizado para publicações periódicas.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Número Internacional Normalizado para Publicações Seriadas, identificador único de publicações periódicas.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Código numérico padronizado internacionalmente para identificação unívoca de publicações seriadas.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#TituloComplementar">
         <rdfs:subClassOf rdf:resource="#Nomen"/>
         <rdfs:label xml:lang="pt-br">Título Complementar</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Variação ou forma alternativa do título principal.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Denominação adicional que complementa o título principal.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Variação ou forma alternativa do título principal de uma obra, incluindo títulos abreviados, anteriores ou paralelos.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Denominação adicional que complementa ou substitui o título principal para fins de identificação.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#AssuntoControlado">
         <rdfs:subClassOf rdf:resource="#Nomen"/>
         <rdfs:label xml:lang="pt-br">Assunto Controlado</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Termo de indexação de vocabulário controlado.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Descritor padronizado para representação temática.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Termo de indexação proveniente de vocabulário controlado usado para representar o conteúdo temático de uma obra.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Descritor padronizado extraído de tesauro ou vocabulário controlado para indexação temática.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#AreaDeConhecimento">
         <rdfs:subClassOf rdf:resource="#Nomen"/>
         <rdfs:label xml:lang="pt-br">Área de Conhecimento</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Campo científico ao qual uma obra pertence.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Categoria temática segundo classificação oficial.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Campo ou domínio científico ao qual uma obra pertence, segundo classificação oficial.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Categoria temática que agrupa conhecimentos afins segundo taxonomia acadêmica estabelecida.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#TabelaAreaDeConhecimento">
         <rdfs:subClassOf rdf:resource="#Nomen"/>
         <rdfs:label xml:lang="pt-br">Tabela de Área de Conhecimento</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Sistema de classificação oficial de áreas do conhecimento.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Esquema classificatório autorizado para domínios científicos.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Sistema de classificação oficial usado para organizar e categorizar áreas do conhecimento.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Esquema classificatório autorizado para estruturação de domínios científicos e acadêmicos.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Pais">
         <rdfs:subClassOf rdf:resource="#Lugar"/>
         <rdfs:label xml:lang="pt-br">País</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Território geográfico com governo soberano.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Território geográfico com governo soberano e limites definidos.</rdfs:comment>
         <rdfs:isDefinedBy xml:lang="pt-br">Unidade política e geográfica de nível nacional.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#UnidadeFederativa">
         <rdfs:subClassOf rdf:resource="#Lugar"/>
         <rdfs:label xml:lang="pt-br">Unidade Federativa</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Divisão política administrativa de um país federativo.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Subdivisão territorial com autonomia política.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Divisão política administrativa de um país federativo, como estado ou província.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Subdivisão territorial com autonomia política dentro de um sistema federativo.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Regiao">
         <rdfs:subClassOf rdf:resource="#Lugar"/>
         <rdfs:label xml:lang="pt-br">Região</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Divisão geográfica que agrupa unidades federativas.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Agrupamento territorial baseado em critérios geográficos.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Divisão geográfica que agrupa unidades federativas por características comuns.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Agrupamento territorial baseado em critérios geográficos, econômicos ou culturais.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Localidade">
         <rdfs:subClassOf rdf:resource="#Lugar"/>
         <rdfs:label xml:lang="pt-br">Localidade</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Área urbana ou rural específica.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Local específico onde se situam instituições ou publicações.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Área urbana ou rural específica, como cidade, vila ou distrito.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Local específico onde se situam instituições, bibliotecas ou onde obras são publicadas.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Endereco">
         <rdfs:subClassOf rdf:resource="#Lugar"/>
         <rdfs:label xml:lang="pt-br">Endereço</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Localização específica com logradouro e coordenadas.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Dados precisos de localização física de uma entidade.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Localização específica de uma instituição, incluindo logradouro, número e complementos.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Dados precisos de localização física de uma entidade ou organização.</rdfs:isDefinedBy>
     </owl:Class>
 
-    <!-- Classes auxiliares -->
+    <!-- Classes auxiliares do domínio -->
     <owl:Class rdf:about="#Nota">
         <rdfs:subClassOf rdf:resource="#Res"/>
         <rdfs:label xml:lang="pt-br">Nota</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Informação explicativa sobre um recurso bibliográfico.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Texto informativo que esclarece aspectos específicos.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Informação explicativa ou complementar sobre uma obra ou recurso bibliográfico.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Texto informativo adicional que esclarece aspectos específicos de um recurso.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Referenciador">
         <rdfs:subClassOf rdf:resource="#Res"/>
         <rdfs:label xml:lang="pt-br">Referenciador</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Base de dados que indexa e referencia publicações.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Sistema responsável pela indexação bibliográfica.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Base de dados ou serviço que indexa e referencia publicações para fins de descoberta e acesso.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Sistema ou serviço responsável pela indexação e disseminação de informações bibliográficas.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#PublicacaoImprenta">
         <rdfs:subClassOf rdf:resource="#Res"/>
         <rdfs:label xml:lang="pt-br">Publicação Imprenta</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Informações sobre local, editora e data de publicação.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Dados que identificam circunstâncias editoriais.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Informações sobre local, editora e data de publicação de uma obra.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Dados que identificam as circunstâncias editoriais de uma publicação.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Contato">
         <rdfs:subClassOf rdf:resource="#Res"/>
         <rdfs:label xml:lang="pt-br">Contato</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Informações para comunicação com uma biblioteca.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Dados que permitem estabelecer comunicação.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Informações para comunicação com uma biblioteca ou instituição.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Dados que permitem estabelecer comunicação com uma organização.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#Homepage">
         <rdfs:subClassOf rdf:resource="#Res"/>
         <rdfs:label xml:lang="pt-br">Página Web</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Endereço eletrônico principal na internet.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Recurso digital oficial de uma entidade na web.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Endereço eletrônico principal de uma obra ou instituição na internet.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Recurso digital que representa a presença oficial de uma entidade na web.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#NaturezaAdministrativa">
         <rdfs:subClassOf rdf:resource="#Res"/>
         <rdfs:label xml:lang="pt-br">Natureza Administrativa</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Categoria jurídica de uma instituição.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Classificação legal do tipo organizacional.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Categoria jurídica ou administrativa que caracteriza uma instituição.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Classificação legal que define o tipo organizacional de uma entidade.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#TipoDeBiblioteca">
         <rdfs:subClassOf rdf:resource="#Res"/>
         <rdfs:label xml:lang="pt-br">Tipo de Biblioteca</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Categoria funcional de uma biblioteca.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Tipologia que define função institucional.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Categoria funcional que classifica uma biblioteca segundo sua função institucional.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Tipologia que define o papel e escopo de atuação de uma biblioteca.</rdfs:isDefinedBy>
     </owl:Class>
 
     <owl:Class rdf:about="#TermoLivre">
         <rdfs:subClassOf rdf:resource="#Res"/>
         <rdfs:label xml:lang="pt-br">Termo Livre</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Palavra-chave não controlada para indexação.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Descritor de linguagem natural para indexação livre.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Palavra-chave não controlada usada para descrever o conteúdo de uma obra.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Descritor de linguagem natural empregado na indexação livre de recursos.</rdfs:isDefinedBy>
     </owl:Class>
 
     <!-- ==============================================
-         PROPRIEDADES DE DADOS (DATATYPE PROPERTIES)
+         PROPRIEDADES DE DADOS (DATA PROPERTIES)
          ============================================== -->
 
     <!-- Propriedade raiz para designações numéricas -->
@@ -875,8 +284,8 @@
         <rdfs:domain rdf:resource="#Obra"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">designação numérica</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Numeração ou designação sequencial de uma obra.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Identificação numérica que especifica posição numa sequência.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Numeração ou designação sequencial de uma obra, como volume, número, edição.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Identificação numérica que especifica a posição de uma unidade numa sequência.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <!-- Subpropriedades de designação numérica -->
@@ -886,7 +295,7 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">volume</rdfs:label>
         <rdfs:comment xml:lang="pt-br">Número do volume de uma publicação seriada.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Designação de um conjunto de fascículos.</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy xml:lang="pt-br">Designação numérica que identifica um conjunto de fascículos de uma publicação periódica.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#numero">
@@ -894,8 +303,8 @@
         <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">número</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Número do fascículo de uma publicação seriada.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Designação sequencial de um fascículo.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Número do fascículo ou edição de uma publicação seriada.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Designação numérica sequencial de um fascículo dentro de um volume.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#edicao">
@@ -903,137 +312,201 @@
         <rdfs:domain rdf:resource="#Obra"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">edição</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Número ou designação da edição.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Identificação da versão editorial específica.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Número ou designação da edição de uma obra.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Identificação da versão editorial específica de uma obra.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
-    <!-- Outras propriedades de dados principais -->
+    <!-- Outras propriedades de dados -->
     <owl:DatatypeProperty rdf:about="#tituloProprio">
         <rdfs:domain rdf:resource="#Obra"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">título próprio</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Título principal pelo qual uma obra é identificada.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Denominação principal oficial de uma obra.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Título principal pelo qual uma obra é formalmente identificada.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Denominação principal e oficial de uma obra conforme registrada.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#conteudo">
         <rdfs:domain rdf:resource="#Obra"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">conteúdo</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Tipologia documental da obra.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Categoria que classifica segundo natureza intelectual.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Tipologia documental que caracteriza o tipo de conteúdo de uma obra.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Categoria que classifica uma obra segundo sua natureza intelectual.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#alfabetacao">
         <rdfs:domain rdf:resource="#Obra"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <rdfs:label xml:lang="pt-br">alfabetação</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Posição de início do título para ordenação alfabética.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Indicador numérico da posição inicial para alfabetação.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Posição de início do título para fins de ordenação alfabética.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Indicador numérico da posição inicial para alfabetação do título.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#nivelDeCatalogacao">
         <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <rdfs:label xml:lang="pt-br">nível de catalogação</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Grau de detalhamento na catalogação.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Indicação do nível de completude dos dados catalográficos.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Grau de detalhamento aplicado na catalogação de uma obra.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Indicação do nível de completude e precisão dos dados catalográficos.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#sigla">
         <rdfs:domain rdf:resource="#Res"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">sigla</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Abreviação oficial de uma entidade.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Forma abreviada padronizada para identificação.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Abreviação oficial ou código identificador de uma entidade.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Forma abreviada padronizada para identificação rápida de uma entidade.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#nome">
         <rdfs:domain rdf:resource="#Res"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">nome</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Denominação oficial de uma entidade.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Identificação nominal formal de um recurso.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Denominação oficial ou designação principal de uma entidade.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Identificação nominal formal de um recurso, pessoa ou organização.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#tipo">
         <rdfs:domain rdf:resource="#Obra"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">tipo</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Tipologia funcional de uma obra.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Classificação que define propósito ou função.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Tipologia funcional que caracteriza a função de uma obra.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Classificação que define o propósito ou função específica de uma obra.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#dataDeCadastro">
         <rdfs:domain rdf:resource="#Obra"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <rdfs:label xml:lang="pt-br">data de cadastro</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Data de registro da obra no sistema.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Timestamp de criação do registro bibliográfico.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Data em que a obra foi registrada no sistema.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Timestamp de criação do registro bibliográfico no catálogo.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#dataDeAtualizacao">
         <rdfs:domain rdf:resource="#Obra"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <rdfs:label xml:lang="pt-br">data de atualização</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Data da última modificação do registro.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Timestamp da versão mais recente do registro.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Data da última modificação do registro da obra.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Timestamp da versão mais recente do registro bibliográfico.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#nivelBibliografico">
         <rdfs:domain rdf:resource="#Obra"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">nível bibliográfico</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Categoria do nível hierárquico do registro.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Classificação segundo estrutura bibliográfica.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Categoria que define o nível hierárquico do registro bibliográfico.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Classificação da obra segundo sua estrutura bibliográfica (monografia, analítica, etc.).</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#notasGerais">
+        <rdfs:domain rdf:resource="#Nota"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt-br">notas gerais</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Informações adicionais e explicativas sobre uma obra.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Texto livre com informações complementares relevantes para usuários.</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#notaComplexidade">
+        <rdfs:domain rdf:resource="#Nota"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt-br">nota de complexidade</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Informação sobre relacionamentos complexos entre obras.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Explicação de vínculos bibliográficos especiais como absorção, fusão ou divisão.</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#notaSuplemento">
+        <rdfs:domain rdf:resource="#Nota"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt-br">nota de suplemento</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Informação sobre suplementos ou edições especiais relacionadas.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Descrição de materiais complementares associados à publicação principal.</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#fonte">
+        <rdfs:domain rdf:resource="#AssuntoControlado"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt-br">fonte</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Origem do vocabulário controlado utilizado na indexação.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Identificação do tesauro ou sistema de classificação de onde provém o termo.</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#logradouro">
+        <rdfs:domain rdf:resource="#Endereco"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt-br">logradouro</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Nome da rua, avenida ou via pública de um endereço.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Denominação oficial da via onde se localiza uma instituição.</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#cep">
+        <rdfs:domain rdf:resource="#Endereco"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt-br">CEP</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Código de Endereçamento Postal que identifica uma região específica.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Código numérico utilizado pelos correios para localização precisa.</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#longitude">
+        <rdfs:domain rdf:resource="#Endereco"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="pt-br">longitude</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Coordenada geográfica que indica a posição leste-oeste.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Medida angular em graus para localização geográfica precisa.</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#latitude">
+        <rdfs:domain rdf:resource="#Endereco"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="pt-br">latitude</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Coordenada geográfica que indica a posição norte-sul.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Medida angular em graus para posicionamento geográfico preciso.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#anoFinal">
         <rdfs:domain rdf:resource="#Obra"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <rdfs:label xml:lang="pt-br">ano final</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Ano de descontinuação de uma publicação seriada.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Data de término da publicação periódica.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Ano em que uma publicação seriada foi descontinuada ou encerrada.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Data de término da publicação de uma obra periódica.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#anoInicial">
         <rdfs:domain rdf:resource="#Obra"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <rdfs:label xml:lang="pt-br">ano inicial</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Ano de início de uma publicação seriada.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Data de início da publicação periódica.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Ano em que uma publicação seriada começou a ser publicada.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Data de início da publicação de uma obra periódica.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#tipoDeRegistro">
         <rdfs:domain rdf:resource="#Obra"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">tipo de registro</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Categoria do tipo de material da obra.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Classificação do formato físico ou digital.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Categoria que identifica o tipo de material da obra.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Classificação do formato físico ou digital do recurso bibliográfico.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#cnpj">
         <rdfs:domain rdf:resource="#Instituicao"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">CNPJ</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Cadastro Nacional da Pessoa Jurídica.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Número de registro obrigatório para pessoas jurídicas.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Cadastro Nacional da Pessoa Jurídica, identificador oficial de instituições.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Número de registro obrigatório para pessoas jurídicas no Brasil.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#softwareUtilizado">
         <rdfs:domain rdf:resource="#Biblioteca"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">software utilizado</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Sistema de automação da biblioteca.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Plataforma tecnológica para gestão do acervo.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Sistema de automação ou software de gestão utilizado pela biblioteca.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Plataforma tecnológica empregada para gerenciamento do acervo e serviços.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#formatoDocumento">
         <rdfs:domain rdf:resource="#Colecao"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">formato do documento</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Padrão de arquivo da coleção.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Especificação técnica do formato de dados.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Padrão ou tipo de arquivo utilizado para armazenar dados da coleção.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Especificação técnica do formato de dados empregado.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#frequencia">
@@ -1041,23 +514,23 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">frequência</rdfs:label>
         <rdfs:comment xml:lang="pt-br">Periodicidade de publicação de uma obra seriada.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Intervalo regular entre edições.</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy xml:lang="pt-br">Intervalo regular entre as edições de uma publicação periódica.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#formatoDeCatalogacao">
         <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">formato de catalogação</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Padrão de metadados utilizado na catalogação.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Especificação do esquema de descrição bibliográfica.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Padrão de metadados utilizado na catalogação da obra.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Especificação do esquema ou norma aplicada na descrição bibliográfica.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#urlDoCatalogo">
         <rdfs:domain rdf:resource="#Biblioteca"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:label xml:lang="pt-br">URL do catálogo</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Endereço eletrônico do catálogo online.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Link direto para sistema de consulta do acervo.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Endereço eletrônico do catálogo online da biblioteca.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Link direto para acesso ao sistema de consulta do acervo.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#paginaWeb">
@@ -1065,14 +538,14 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:label xml:lang="pt-br">página web</rdfs:label>
         <rdfs:comment xml:lang="pt-br">Endereço do website oficial da biblioteca.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">URL da página principal da biblioteca.</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy xml:lang="pt-br">URL da página principal da biblioteca na internet.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#enderecoEletronico">
         <rdfs:domain rdf:resource="#Homepage"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:label xml:lang="pt-br">endereço eletrônico</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">URL completo de uma página web.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">URL completo de uma página web ou recurso online.</rdfs:comment>
         <rdfs:isDefinedBy xml:lang="pt-br">Localização completa de um recurso na internet.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
@@ -1080,119 +553,109 @@
         <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">requerimento de ligação</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Indicação da necessidade de registro das partes.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Especificação de vinculação entre suportes.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Indicação da necessidade de registro das partes componentes.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Especificação de vinculação entre diferentes suportes ou versões.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#statusDoRegistro">
         <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">status do registro</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Estado atual do registro bibliográfico.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Indicação de modificações aplicadas ao registro.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Estado atual do registro bibliográfico no sistema.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Indicação de modificações ou revisões aplicadas ao registro.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#situacaoDaPublicacao">
         <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">situação da publicação</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Status atual da publicação.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Estado da continuidade editorial de uma publicação seriada.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Status atual da publicação (ativa, descontinuada, suspensa).</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Estado corrente da continuidade editorial de uma publicação seriada.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#principal">
         <rdfs:domain rdf:resource="#Contato"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">principal</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Informação de contato principal.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Meio prioritário para comunicação.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Informação de contato principal de uma instituição.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Meio prioritário para estabelecer comunicação com a organização.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
-    <!-- Propriedades geográficas -->
-    <owl:DatatypeProperty rdf:about="#logradouro">
-        <rdfs:domain rdf:resource="#Endereco"/>
+    <owl:DatatypeProperty rdf:about="#telefoneFixo">
+        <rdfs:domain rdf:resource="#Contato"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="pt-br">logradouro</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Nome da rua, avenida ou via pública.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Denominação oficial da via onde se localiza.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="pt-br">telefone fixo</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Número de telefone fixo para contato.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Linha telefônica convencional para comunicação com a instituição.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
-    <owl:DatatypeProperty rdf:about="#cep">
-        <rdfs:domain rdf:resource="#Endereco"/>
+    <owl:DatatypeProperty rdf:about="#email">
+        <rdfs:domain rdf:resource="#Contato"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="pt-br">CEP</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Código de Endereçamento Postal.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Código numérico para localização pelos correios.</rdfs:isDefinedBy>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="#latitude">
-        <rdfs:domain rdf:resource="#Endereco"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:label xml:lang="pt-br">latitude</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Coordenada geográfica norte-sul.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Medida angular para posicionamento geográfico.</rdfs:isDefinedBy>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="#longitude">
-        <rdfs:domain rdf:resource="#Endereco"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:label xml:lang="pt-br">longitude</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Coordenada geográfica leste-oeste.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Medida angular para localização geográfica.</rdfs:isDefinedBy>
-    </owl:DatatypeProperty>
-
-    <!-- Propriedades auxiliares -->
-    <owl:DatatypeProperty rdf:about="#notasGerais">
-        <rdfs:domain rdf:resource="#Nota"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="pt-br">notas gerais</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Informações adicionais sobre uma obra.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Texto livre com informações complementares.</rdfs:isDefinedBy>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="#notaComplexidade">
-        <rdfs:domain rdf:resource="#Nota"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="pt-br">nota de complexidade</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Informação sobre relacionamentos complexos.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Explicação de vínculos bibliográficos especiais.</rdfs:isDefinedBy>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="#notaSuplemento">
-        <rdfs:domain rdf:resource="#Nota"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="pt-br">nota de suplemento</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Informação sobre suplementos relacionados.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Descrição de materiais complementares.</rdfs:isDefinedBy>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="#fonte">
-        <rdfs:domain rdf:resource="#AssuntoControlado"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="pt-br">fonte</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Origem do vocabulário controlado.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Identificação do tesauro ou sistema de classificação.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="pt-br">email</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Endereço de correio eletrônico para contato.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Conta de email oficial para comunicação digital.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <owl:DatatypeProperty rdf:about="#codigo">
         <rdfs:domain rdf:resource="#AreaDeConhecimento"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="pt-br">código</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Código numérico de uma área de conhecimento.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Identificador único em sistemas de classificação.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Código numérico que identifica uma área de conhecimento.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Identificador único usado em sistemas de classificação acadêmica.</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#codigoIso">
+        <rdfs:domain rdf:resource="#Pais"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt-br">código ISO</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Código internacional padronizado para identificação de países.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Identificador alfanumérico segundo padrão ISO 3166.</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#conteudoColecao">
+        <rdfs:domain rdf:resource="#Colecao"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt-br">conteúdo da coleção</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Descrição detalhada dos itens que compõem uma coleção.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inventário ou listagem dos recursos disponíveis em uma coleção específica.</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#servicos">
+        <rdfs:domain rdf:resource="#Biblioteca"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt-br">serviços</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Serviços bibliográficos oferecidos ou utilizados pela biblioteca.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Programas e sistemas aos quais a biblioteca está vinculada ou oferece.</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#descricao">
+        <rdfs:domain rdf:resource="#ISSN"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt-br">descrição</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Representação textual do código ISSN.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Forma legível do identificador internacional de publicação seriada.</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#dataInicialPI">
+        <rdfs:domain rdf:resource="#PublicacaoImprenta"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt-br">data inicial da publicação</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Data de início da publicação de uma obra.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Informação temporal sobre o começo da produção editorial.</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
 
     <!-- ==============================================
          PROPRIEDADES DE OBJETO (OBJECT PROPERTIES)
          ============================================== -->
 
-    <!-- Propriedades com suas inversas obrigatórias -->
+    <!-- Propriedades com suas inversas -->
     <owl:ObjectProperty rdf:about="#hasPublicationLanguage">
         <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
         <rdfs:range rdf:resource="#Idioma"/>
         <rdfs:label xml:lang="pt-br">tem idioma de publicação</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com seu idioma principal.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre obra e língua de expressão.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação seriada com seu idioma principal.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre uma obra e a língua em que foi expressa.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#isPublicationLanguageOf">
@@ -1200,16 +663,16 @@
         <rdfs:domain rdf:resource="#Idioma"/>
         <rdfs:range rdf:resource="#PublicacaoSeriada"/>
         <rdfs:label xml:lang="pt-br">é idioma de publicação de</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona um idioma com as publicações nessa língua.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade de idioma de publicação.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Relaciona um idioma com as publicações expressas nessa língua.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga idioma à obra correspondente.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#hasISSN">
         <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
         <rdfs:range rdf:resource="#ISSN"/>
         <rdfs:label xml:lang="pt-br">tem ISSN</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com seu identificador ISSN.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre publicação e código internacional.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação seriada com seu identificador ISSN.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre uma publicação e seu código internacional padronizado.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#isISSNOf">
@@ -1217,16 +680,16 @@
         <rdfs:domain rdf:resource="#ISSN"/>
         <rdfs:range rdf:resource="#PublicacaoSeriada"/>
         <rdfs:label xml:lang="pt-br">é ISSN de</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona um ISSN com sua publicação correspondente.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga ISSN à publicação.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Relaciona um código ISSN com sua publicação correspondente.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga ISSN à publicação identificada.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#hasPublisher">
         <rdfs:domain rdf:resource="#PublicacaoImprenta"/>
         <rdfs:range rdf:resource="#Editora"/>
         <rdfs:label xml:lang="pt-br">tem editora</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona imprenta com a editora responsável.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre dados de publicação e editora.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Relaciona informações de imprenta com a editora responsável.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre dados de publicação e a organização editora.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#isPublisherOf">
@@ -1235,15 +698,15 @@
         <rdfs:range rdf:resource="#PublicacaoImprenta"/>
         <rdfs:label xml:lang="pt-br">é editora de</rdfs:label>
         <rdfs:comment xml:lang="pt-br">Relaciona uma editora com as obras que publica.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta editora às publicações.</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta editora às suas publicações.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#hasCollection">
         <rdfs:domain rdf:resource="#Biblioteca"/>
         <rdfs:range rdf:resource="#Colecao"/>
         <rdfs:label xml:lang="pt-br">tem coleção</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma biblioteca com suas coleções.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre instituição e acervos mantidos.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma biblioteca com suas coleções de recursos.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre uma instituição e os acervos que mantém.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#isCollectionOf">
@@ -1251,8 +714,8 @@
         <rdfs:domain rdf:resource="#Colecao"/>
         <rdfs:range rdf:resource="#Biblioteca"/>
         <rdfs:label xml:lang="pt-br">é coleção de</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma coleção com a biblioteca proprietária.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga coleção à biblioteca.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma coleção com a biblioteca que a possui.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga coleção à biblioteca responsável.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#hasNote">
@@ -1260,7 +723,7 @@
         <rdfs:range rdf:resource="#Nota"/>
         <rdfs:label xml:lang="pt-br">tem nota</rdfs:label>
         <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com suas notas explicativas.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre obra e informações complementares.</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre uma obra e informações complementares relevantes.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#isNoteOf">
@@ -1269,15 +732,15 @@
         <rdfs:range rdf:resource="#PublicacaoSeriada"/>
         <rdfs:label xml:lang="pt-br">é nota de</rdfs:label>
         <rdfs:comment xml:lang="pt-br">Relaciona uma nota com a publicação que descreve.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta nota à obra.</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta nota à obra correspondente.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#hasSupport">
         <rdfs:domain rdf:resource="#ISSN"/>
         <rdfs:range rdf:resource="#MeioFisico"/>
         <rdfs:label xml:lang="pt-br">tem suporte</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona um ISSN com o meio físico de publicação.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre identificador e formato físico.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Relaciona um ISSN com o meio físico de sua publicação.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre identificador e formato físico da manifestação.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#isSupportOf">
@@ -1285,16 +748,16 @@
         <rdfs:domain rdf:resource="#MeioFisico"/>
         <rdfs:range rdf:resource="#ISSN"/>
         <rdfs:label xml:lang="pt-br">é suporte de</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona um meio físico com ISSNs que utilizam esse formato.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga meio físico ao identificador.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Relaciona um meio físico com os ISSNs que utilizam esse formato.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga meio físico ao identificador correspondente.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#hasHomepage">
         <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
         <rdfs:range rdf:resource="#Homepage"/>
         <rdfs:label xml:lang="pt-br">tem página web</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com sua página oficial.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre obra e presença digital oficial.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com sua página oficial na internet.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre uma obra e sua presença digital oficial.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#isHomepageOf">
@@ -1302,16 +765,16 @@
         <rdfs:domain rdf:resource="#Homepage"/>
         <rdfs:range rdf:resource="#PublicacaoSeriada"/>
         <rdfs:label xml:lang="pt-br">é página web de</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma página com a publicação que representa.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta homepage à publicação.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma página web com a publicação que representa.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta homepage à publicação correspondente.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#hasKnowledgeField">
         <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
         <rdfs:range rdf:resource="#AreaDeConhecimento"/>
         <rdfs:label xml:lang="pt-br">tem área de conhecimento</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com sua área temática.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre obra e domínio científico.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com sua área temática de conhecimento.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre uma obra e o domínio científico ao qual pertence.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#isKnowledgeFieldOf">
@@ -1320,15 +783,15 @@
         <rdfs:range rdf:resource="#PublicacaoSeriada"/>
         <rdfs:label xml:lang="pt-br">é área de conhecimento de</rdfs:label>
         <rdfs:comment xml:lang="pt-br">Relaciona uma área com as publicações que abrange.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga área às obras do domínio.</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga área de conhecimento às obras do domínio.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#hasKnowledgeAreaTable">
         <rdfs:domain rdf:resource="#AreaDeConhecimento"/>
         <rdfs:range rdf:resource="#TabelaAreaDeConhecimento"/>
         <rdfs:label xml:lang="pt-br">tem tabela de área de conhecimento</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma área com a tabela que a define.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre área e sistema classificatório.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma área com a tabela de classificação que a define.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre área específica e sistema classificatório oficial.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#isKnowledgeFieldTableOf">
@@ -1337,15 +800,15 @@
         <rdfs:range rdf:resource="#AreaDeConhecimento"/>
         <rdfs:label xml:lang="pt-br">é tabela de área de conhecimento de</rdfs:label>
         <rdfs:comment xml:lang="pt-br">Relaciona uma tabela com as áreas que classifica.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta tabela às áreas.</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta tabela às áreas classificadas.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#hasContact">
         <rdfs:domain rdf:resource="#Biblioteca"/>
         <rdfs:range rdf:resource="#Contato"/>
         <rdfs:label xml:lang="pt-br">tem contato</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma biblioteca com informações de contato.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre instituição e meios de comunicação.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma biblioteca com suas informações de contato.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre uma instituição e os meios de comunicação disponíveis.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#isContactOf">
@@ -1353,16 +816,16 @@
         <rdfs:domain rdf:resource="#Contato"/>
         <rdfs:range rdf:resource="#Biblioteca"/>
         <rdfs:label xml:lang="pt-br">é contato de</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona informações de contato com a biblioteca.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga contato à biblioteca.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Relaciona informações de contato com a biblioteca correspondente.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga contato à biblioteca responsável.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#hasRelatedPublication">
         <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
         <rdfs:range rdf:resource="#PublicacaoRelacionada"/>
         <rdfs:label xml:lang="pt-br">tem publicação relacionada</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com obras bibliograficamente vinculadas.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Conexão entre publicações com relações de continuidade.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com outras obras bibliograficamente vinculadas.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Conexão entre publicações que mantêm relações de continuidade ou derivação.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#isRelatedPublicationOf">
@@ -1370,7 +833,7 @@
         <rdfs:domain rdf:resource="#PublicacaoRelacionada"/>
         <rdfs:range rdf:resource="#PublicacaoSeriada"/>
         <rdfs:label xml:lang="pt-br">é publicação relacionada de</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona uma obra com a publicação principal.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma obra com a publicação principal à qual se vincula.</rdfs:comment>
         <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta publicação relacionada à obra base.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
@@ -1378,11 +841,713 @@
         <rdfs:domain rdf:resource="#PublicacaoImprenta"/>
         <rdfs:range rdf:resource="#Localidade"/>
         <rdfs:label xml:lang="pt-br">tem local de publicação</rdfs:label>
-        <rdfs:comment xml:lang="pt-br">Relaciona imprenta com o local de publicação.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre dados editoriais e localização geográfica.</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Relaciona informações de imprenta com o local de publicação.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre dados editoriais e localização geográfica da publicação.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="#isPlacePublicationOf">
         <owl:inverseOf rdf:resource="#hasPlacePublication"/>
         <rdfs:domain rdf:resource="#Localidade"/>
         <rdfs:range rdf:resource="#PublicacaoImprenta"/>
+        <rdfs:label xml:lang="pt-br">é local de publicação de</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma localidade com as obras nela publicadas.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga localidade às publicações originárias.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasControlledSubject">
+        <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="#AssuntoControlado"/>
+        <rdfs:label xml:lang="pt-br">tem assunto controlado</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com termos de indexação controlada.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre obra e descritores padronizados que representam seu conteúdo.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isControlledSubjectOf">
+        <owl:inverseOf rdf:resource="#hasControlledSubject"/>
+        <rdfs:domain rdf:resource="#AssuntoControlado"/>
+        <rdfs:range rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:label xml:lang="pt-br">é assunto controlado de</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona um termo controlado com as publicações que indexa.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta assunto às obras indexadas.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasPublicationDate">
+        <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="#PublicacaoImprenta"/>
+        <rdfs:label xml:lang="pt-br">tem data de publicação</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com suas informações de imprenta.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre obra e dados temporais e editoriais de sua publicação.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isPublicationDateOf">
+        <owl:inverseOf rdf:resource="#hasPublicationDate"/>
+        <rdfs:domain rdf:resource="#PublicacaoImprenta"/>
+        <rdfs:range rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:label xml:lang="pt-br">é data de publicação de</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona informações de imprenta com a publicação correspondente.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga imprenta à obra publicada.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasAdminNature">
+        <rdfs:domain rdf:resource="#Instituicao"/>
+        <rdfs:range rdf:resource="#NaturezaAdministrativa"/>
+        <rdfs:label xml:lang="pt-br">tem natureza administrativa</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma instituição com sua categoria administrativa.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre organização e sua classificação jurídico-administrativa.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isAdminNatureOf">
+        <owl:inverseOf rdf:resource="#hasAdminNature"/>
+        <rdfs:domain rdf:resource="#NaturezaAdministrativa"/>
+        <rdfs:range rdf:resource="#Instituicao"/>
+        <rdfs:label xml:lang="pt-br">é natureza administrativa de</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma categoria administrativa com as instituições que a possuem.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta natureza às instituições classificadas.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasTitleComplement">
+        <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="#TituloComplementar"/>
+        <rdfs:label xml:lang="pt-br">tem título complementar</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com seus títulos alternativos ou complementares.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre obra principal e variações de seu título oficial.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isTitleComplementOf">
+        <owl:inverseOf rdf:resource="#hasTitleComplement"/>
+        <rdfs:domain rdf:resource="#TituloComplementar"/>
+        <rdfs:range rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:label xml:lang="pt-br">é título complementar de</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona um título complementar com a publicação que representa.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga título complementar à obra principal.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasFreeTerm">
+        <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="#TermoLivre"/>
+        <rdfs:label xml:lang="pt-br">tem termo livre</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com termos de indexação em linguagem natural.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre obra e palavras-chave não controladas que descrevem seu conteúdo.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isFreeTermOf">
+        <owl:inverseOf rdf:resource="#hasFreeTerm"/>
+        <rdfs:domain rdf:resource="#TermoLivre"/>
+        <rdfs:range rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:label xml:lang="pt-br">é termo livre de</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona um termo livre com as publicações que descreve.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta termo livre às obras indexadas.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#indexedBy">
+        <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="#Referenciador"/>
+        <rdfs:label xml:lang="pt-br">indexada por</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com os serviços que a indexam.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre obra e bases de dados ou serviços de indexação.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isIndexOf">
+        <owl:inverseOf rdf:resource="#indexedBy"/>
+        <rdfs:domain rdf:resource="#Referenciador"/>
+        <rdfs:range rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:label xml:lang="pt-br">é índice de</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona um referenciador com as publicações que indexa.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga referenciador às obras indexadas.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasLibraryType">
+        <rdfs:domain rdf:resource="#Biblioteca"/>
+        <rdfs:range rdf:resource="#TipoDeBiblioteca"/>
+        <rdfs:label xml:lang="pt-br">tem tipo de biblioteca</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma biblioteca com sua classificação tipológica.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre biblioteca e categoria que define sua função institucional.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isLibraryTypeOf">
+        <owl:inverseOf rdf:resource="#hasLibraryType"/>
+        <rdfs:domain rdf:resource="#TipoDeBiblioteca"/>
+        <rdfs:range rdf:resource="#Biblioteca"/>
+        <rdfs:label xml:lang="pt-br">é tipo de biblioteca de</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona um tipo com as bibliotecas que o exemplificam.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta tipo às bibliotecas classificadas.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#contains">
+        <rdfs:domain rdf:resource="#Colecao"/>
+        <rdfs:range rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:label xml:lang="pt-br">contém</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma coleção com as publicações que inclui.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre acervo e os itens bibliográficos que o compõem.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isContainedIn">
+        <owl:inverseOf rdf:resource="#contains"/>
+        <rdfs:domain rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:range rdf:resource="#Colecao"/>
+        <rdfs:label xml:lang="pt-br">está contida em</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma publicação com a coleção que a inclui.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga publicação à coleção que a abriga.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <!-- Propriedades para relacionamentos geográficos -->
+    <owl:ObjectProperty rdf:about="#hasAddress">
+        <rdfs:domain rdf:resource="#Biblioteca"/>
+        <rdfs:range rdf:resource="#Endereco"/>
+        <rdfs:label xml:lang="pt-br">tem endereço</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma biblioteca com sua localização física.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre instituição e dados de localização geográfica.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasAffiliation">
+        <rdfs:domain rdf:resource="#Biblioteca"/>
+        <rdfs:range rdf:resource="#Instituicao"/>
+        <rdfs:label xml:lang="pt-br">tem afiliação</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma biblioteca com a instituição à qual pertence.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre biblioteca e organização mantenedora.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isAffiliatedWith">
+        <owl:inverseOf rdf:resource="#hasAffiliation"/>
+        <rdfs:domain rdf:resource="#Instituicao"/>
+        <rdfs:range rdf:resource="#Biblioteca"/>
+        <rdfs:label xml:lang="pt-br">é afiliada com</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma instituição com suas bibliotecas vinculadas.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que conecta instituição às bibliotecas que mantém.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasInstitutionAddress">
+        <rdfs:domain rdf:resource="#Instituicao"/>
+        <rdfs:range rdf:resource="#Endereco"/>
+        <rdfs:label xml:lang="pt-br">tem endereço da instituição</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma instituição com sua localização oficial.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre organização e seus dados de endereçamento.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <!-- Propriedades simétricas -->
+    <owl:ObjectProperty rdf:about="#isAssociationOf">
+        <rdfs:domain rdf:resource="#Unidade"/>
+        <rdfs:range rdf:resource="#Unidade"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:label xml:lang="pt-br">é associação de</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona unidades organizacionais entre si.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Conexão simétrica entre unidades administrativas relacionadas.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <!-- Propriedades hierárquicas geográficas -->
+    <owl:ObjectProperty rdf:about="#hasCity">
+        <rdfs:domain rdf:resource="#Pais"/>
+        <rdfs:range rdf:resource="#Localidade"/>
+        <rdfs:label xml:lang="pt-br">tem cidade</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona um país com suas localidades.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo geográfico entre território nacional e municípios.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isCityOf">
+        <owl:inverseOf rdf:resource="#hasCity"/>
+        <rdfs:domain rdf:resource="#Localidade"/>
+        <rdfs:range rdf:resource="#Pais"/>
+        <rdfs:label xml:lang="pt-br">é cidade de</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma localidade com o país ao qual pertence.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Inversa da propriedade que liga cidade ao território nacional.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasCountry">
+        <rdfs:domain rdf:resource="#UnidadeFederativa"/>
+        <rdfs:range rdf:resource="#Pais"/>
+        <rdfs:label xml:lang="pt-br">tem país</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma unidade federativa com o país ao qual pertence.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre estado/província e território nacional.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isFederativeUnitOf">
+        <rdfs:domain rdf:resource="#UnidadeFederativa"/>
+        <rdfs:range rdf:resource="#Localidade"/>
+        <rdfs:label xml:lang="pt-br">é unidade federativa de</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma unidade federativa com suas localidades.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre estado/província e municípios que o compõem.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isRegionOf">
+        <rdfs:domain rdf:resource="#Regiao"/>
+        <rdfs:range rdf:resource="#UnidadeFederativa"/>
+        <rdfs:label xml:lang="pt-br">é região de</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma região com as unidades federativas que abrange.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre região geográfica e estados/províncias que a compõem.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isLocalityOf">
+        <rdfs:domain rdf:resource="#Localidade"/>
+        <rdfs:range rdf:resource="#Endereco"/>
+        <rdfs:label xml:lang="pt-br">é localidade de</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona uma cidade com os endereços nela localizados.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre município e endereços específicos em seu território.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isCountryPublicationOf">
+        <rdfs:domain rdf:resource="#Pais"/>
+        <rdfs:range rdf:resource="#Obra"/>
+        <rdfs:label xml:lang="pt-br">é país de publicação de</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Relaciona um país com as obras nele publicadas.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Vínculo entre território nacional e obras originárias.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+
+    <!-- ==============================================
+         INDIVÍDUOS (INDIVIDUALS)
+         ============================================== -->
+
+    <!-- Obra principal -->
+    <owl:NamedIndividual rdf:about="#Obra_1">
+        <rdf:type rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:label xml:lang="pt-br">Ciência da Informação</rdfs:label>
+        <tituloProprio>Ciência da Informação</tituloProprio>
+        <alfabetacao>0</alfabetacao>
+        <nivelDeCatalogacao>Nível central</nivelDeCatalogacao>
+        <nivelBibliografico>Periódico</nivelBibliografico>
+        <tipoDeRegistro>Material textual impresso</tipoDeRegistro>
+        <anoInicial>1972</anoInicial>
+        <anoFinal>2015</anoFinal>
+        <situacaoDaPublicacao>Descontinuada</situacaoDaPublicacao>
+        <statusDoRegistro>Alterado</statusDoRegistro>
+        <frequencia>quadrimestral</frequencia>
+        <formatoDeCatalogacao>AACR2</formatoDeCatalogacao>
+        <volume>1</volume>
+        <numero>1</numero>
+        <hasISSN rdf:resource="#ISSN_1"/>
+        <hasPublicationDate rdf:resource="#PublicacaoImprenta_1"/>
+        <hasTitleComplement rdf:resource="#TituloComplementar_1"/>
+        <hasFreeTerm rdf:resource="#TermoLivre_1"/>
+        <indexedBy rdf:resource="#Referenciador_1"/>
+        <hasHomepage rdf:resource="#Homepage_1"/>
+        <hasKnowledgeField rdf:resource="#AreaDeConhecimento_1"/>
+        <hasControlledSubject rdf:resource="#AssuntoControlado_1"/>
+    </owl:NamedIndividual>
+
+    <!-- ISSN -->
+    <owl:NamedIndividual rdf:about="#ISSN_1">
+        <rdf:type rdf:resource="#ISSN"/>
+        <rdfs:label xml:lang="pt-br">0100-1965</rdfs:label>
+        <descricao>0100-1965</descricao>
+        <hasSupport rdf:resource="#MeioFisico_1"/>
+    </owl:NamedIndividual>
+
+    <!-- Meio Físico -->
+    <owl:NamedIndividual rdf:about="#MeioFisico_1">
+        <rdf:type rdf:resource="#MeioFisico"/>
+        <rdfs:label xml:lang="pt-br">Impresso</rdfs:label>
+        <nome>Impresso</nome>
+    </owl:NamedIndividual>
+
+    <!-- Coleção -->
+    <owl:NamedIndividual rdf:about="#Colecao_1">
+        <rdf:type rdf:resource="#Colecao"/>
+        <rdfs:label xml:lang="pt-br">IBICT/BT</rdfs:label>
+        <nome>IBICT/BT</nome>
+        <conteudoColecao>1972 1(1-2); 1973 2(1-2); 1974 3(1-2); 1975 4(1-2); 1976 5(1/2); 1977 6(1- 2); 1978 7(1-2); 1979 8(1-2); 1980 9(1/2); 1981 10(1-2); 1982 11(1-2); 1983 12(1 -2); 1984 13(1-2); 1985 14(1-2); 1986 15(1-2); 1987 16(1-2); 1988 17(1- 2); 1989 18(1-2); 1990 19(1-2); 1991 20(1-2); 1992 21(1-3); 1993 22(1-3); 1994 23(1-3); 1 995 24(1-3); 1996 25(1-3); 1997 26(1-3); 1998 27(1-3); 1999 28(1-3); 2000 29(1-3 ); 2001 30(1-3); 2002 31(1-3); 2003 32(1-3); 2004 33(1-3); 2005 34(1-3); 2006 35 (1-3); 2007 36(1-3); 2008 37(1-3); 2009 38(1-3); 2010 39(1-3); 2011 40(1- 3); 201 5 44(1)</conteudoColecao>
+        <contains rdf:resource="#Obra_1"/>
+    </owl:NamedIndividual>
+
+    <!-- Contato -->
+    <owl:NamedIndividual rdf:about="#Contato_1">
+        <rdf:type rdf:resource="#Contato"/>
+        <rdfs:label xml:lang="pt-br">Contato Principal</rdfs:label>
+        <telefoneFixo>(61)32176145</telefoneFixo>
+        <email>biblioteca@ibict.br</email>
+        <principal>(61)32176145</principal>
+    </owl:NamedIndividual>
+
+    <!-- Assunto Controlado -->
+    <owl:NamedIndividual rdf:about="#AssuntoControlado_1">
+        <rdf:type rdf:resource="#AssuntoControlado"/>
+        <rdfs:label xml:lang="pt-br">Organização da Informação</rdfs:label>
+        <nome>Organização da Informação</nome>
+        <fonte>Tesauro Brasileiro de Ciência da Informação</fonte>
+    </owl:NamedIndividual>
+
+    <!-- Publicação Relacionada -->
+    <owl:NamedIndividual rdf:about="#PublicacaoRelacionada_1">
+        <rdf:type rdf:resource="#PublicacaoRelacionada"/>
+        <rdfs:label xml:lang="pt-br">Ciência da Informação (Online)</rdfs:label>
+        <nome>Ciência da Informação (Online)</nome>
+    </owl:NamedIndividual>
+
+    <!-- Idiomas -->
+    <owl:NamedIndividual rdf:about="#Idioma_1">
+        <rdf:type rdf:resource="#Idioma"/>
+        <rdfs:label xml:lang="pt-br">português</rdfs:label>
+        <nome>português</nome>
+        <sigla>POR</sigla>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Idioma_2">
+        <rdf:type rdf:resource="#Idioma"/>
+        <rdfs:label xml:lang="pt-br">inglês</rdfs:label>
+        <nome>inglês</nome>
+        <sigla>ENG</sigla>
+    </owl:NamedIndividual>
+
+    <!-- Tabela de Área de Conhecimento -->
+    <owl:NamedIndividual rdf:about="#Tabela_1">
+        <rdf:type rdf:resource="#TabelaAreaDeConhecimento"/>
+        <rdfs:label xml:lang="pt-br">Tabela de áreas do conhecimento CAPES</rdfs:label>
+        <nome>Tabela de áreas do conhecimento /avaliação CAPES</nome>
+    </owl:NamedIndividual>
+
+    <!-- Biblioteca -->
+    <owl:NamedIndividual rdf:about="#Biblioteca_1">
+        <rdf:type rdf:resource="#Biblioteca"/>
+        <rdfs:label xml:lang="pt-br">Lydia de Queiroz Sambaquy</rdfs:label>
+        <nome>Lydia de Queiroz Sambaquy</nome>
+        <softwareUtilizado>Koha</softwareUtilizado>
+        <sigla>LQS</sigla>
+        <servicos>CCN</servicos>
+        <servicos>Comut</servicos>
+        <servicos>Bibliodata</servicos>
+        <urlDoCatalogo rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://biblioteca.ibict.br</urlDoCatalogo>
+        <paginaWeb rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://biblioteca.ibict.br</paginaWeb>
+        <hasAddress rdf:resource="#Endereco_1"/>
+        <hasAffiliation rdf:resource="#Instituicao_1"/>
+        <hasContact rdf:resource="#Contato_1"/>
+        <hasCollection rdf:resource="#Colecao_1"/>
+        <hasLibraryType rdf:resource="#TipoDeBiblioteca_1"/>
+    </owl:NamedIndividual>
+
+    <!-- Localidades -->
+    <owl:NamedIndividual rdf:about="#Localidade_1">
+        <rdf:type rdf:resource="#Localidade"/>
+        <rdfs:label xml:lang="pt-br">Brasília</rdfs:label>
+        <nome>Brasília</nome>
+    </owl:NamedIndividual>
+
+    <!-- País -->
+    <owl:NamedIndividual rdf:about="#Pais_1">
+        <rdf:type rdf:resource="#Pais"/>
+        <rdfs:label xml:lang="pt-br">Brasil</rdfs:label>
+        <nome>Brasil</nome>
+        <codigoIso>BRA</codigoIso>
+        <hasCity rdf:resource="#Localidade_1"/>
+    </owl:NamedIndividual>
+
+    <!-- Unidade Federativa -->
+    <owl:NamedIndividual rdf:about="#UnidadeFederativa_1">
+        <rdf:type rdf:resource="#UnidadeFederativa"/>
+        <rdfs:label xml:lang="pt-br">Distrito Federal</rdfs:label>
+        <nome>Distrito Federal</nome>
+        <sigla>DF</sigla>
+        <hasCountry rdf:resource="#Pais_1"/>
+        <isFederativeUnitOf rdf:resource="#Localidade_1"/>
+    </owl:NamedIndividual>
+
+    <!-- Região -->
+    <owl:NamedIndividual rdf:about="#Regiao_1">
+        <rdf:type rdf:resource="#Regiao"/>
+        <rdfs:label xml:lang="pt-br">Centro-Oeste</rdfs:label>
+        <nome>Centro-Oeste</nome>
+        <isRegionOf rdf:resource="#UnidadeFederativa_1"/>
+    </owl:NamedIndividual>
+
+    <!-- Título Complementar -->
+    <owl:NamedIndividual rdf:about="#TituloComplementar_1">
+        <rdf:type rdf:resource="#TituloComplementar"/>
+        <rdfs:label xml:lang="pt-br">Ciênc. Inf.</rdfs:label>
+        <nome>Ciênc. Inf.</nome>
+    </owl:NamedIndividual>
+
+    <!-- Termo Livre -->
+    <owl:NamedIndividual rdf:about="#TermoLivre_1">
+        <rdf:type rdf:resource="#TermoLivre"/>
+        <rdfs:label xml:lang="pt-br">CI</rdfs:label>
+        <nome>CI</nome>
+    </owl:NamedIndividual>
+
+    <!-- Referenciador -->
+    <owl:NamedIndividual rdf:about="#Referenciador_1">
+        <rdf:type rdf:resource="#Referenciador"/>
+        <rdfs:label xml:lang="pt-br">Library &amp; information science abstracts</rdfs:label>
+        <nome>Library &amp; information science abstracts</nome>
+    </owl:NamedIndividual>
+
+    <!-- Tipo de Biblioteca -->
+    <owl:NamedIndividual rdf:about="#TipoDeBiblioteca_1">
+        <rdf:type rdf:resource="#TipoDeBiblioteca"/>
+        <rdfs:label xml:lang="pt-br">Biblioteca Setorial</rdfs:label>
+        <nome>Biblioteca Setorial</nome>
+    </owl:NamedIndividual>
+
+    <!-- Publicação Imprenta -->
+    <owl:NamedIndividual rdf:about="#PublicacaoImprenta_1">
+        <rdf:type rdf:resource="#PublicacaoImprenta"/>
+        <rdfs:label xml:lang="pt-br">Publicação 1972</rdfs:label>
+        <dataInicialPI>1972</dataInicialPI>
+        <hasPlacePublication rdf:resource="#Localidade_1"/>
+        <hasPublisher rdf:resource="#Editora_1"/>
+    </owl:NamedIndividual>
+
+    <!-- Natureza Administrativa -->
+    <owl:NamedIndividual rdf:about="#NaturezaAdministrativa_1">
+        <rdf:type rdf:resource="#NaturezaAdministrativa"/>
+        <rdfs:label xml:lang="pt-br">Pública Federal</rdfs:label>
+        <nome>Pública Federal</nome>
+    </owl:NamedIndividual>
+
+    <!-- Homepage -->
+    <owl:NamedIndividual rdf:about="#Homepage_1">
+        <rdf:type rdf:resource="#Homepage"/>
+        <rdfs:label xml:lang="pt-br">Página da Revista Ciência da Informação</rdfs:label>
+        <enderecoEletronico rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://revista.ibict.br/ciinf/article/view/6125</enderecoEletronico>
+    </owl:NamedIndividual>
+
+    <!-- Editora -->
+    <owl:NamedIndividual rdf:about="#Editora_1">
+        <rdf:type rdf:resource="#Editora"/>
+        <rdfs:label xml:lang="pt-br">Instituto Brasileiro de Informação em Ciência e Tecnologia</rdfs:label>
+        <nome>Instituto Brasileiro de Informação em Ciência e Tecnologia</nome>
+        <sigla>Ibict</sigla>
+    </owl:NamedIndividual>
+
+    <!-- Unidade -->
+    <owl:NamedIndividual rdf:about="#Unidade_1">
+        <rdf:type rdf:resource="#Unidade"/>
+        <rdfs:label xml:lang="pt-br">Coordenação de Serviços Bibliográficos</rdfs:label>
+        <nome>Coordenação de Serviços Bibliográficos</nome>
+        <sigla>COBIB</sigla>
+    </owl:NamedIndividual>
+
+    <!-- Endereço -->
+    <owl:NamedIndividual rdf:about="#Endereco_1">
+        <rdf:type rdf:resource="#Endereco"/>
+        <rdfs:label xml:lang="pt-br">Endereço IBICT</rdfs:label>
+        <logradouro>Quadra 05, Lote 06, Bloco H 5º andar</logradouro>
+        <cep>70070-912</cep>
+        <latitude>-15.8024936</latitude>
+        <longitude>-47.8824090</longitude>
+    </owl:NamedIndividual>
+
+    <!-- Instituição -->
+    <owl:NamedIndividual rdf:about="#Instituicao_1">
+        <rdf:type rdf:resource="#Instituicao"/>
+        <rdfs:label xml:lang="pt-br">Instituto Brasileiro de Informação em Ciência e Tecnologia</rdfs:label>
+        <nome>Instituto Brasileiro de Informação em Ciência e Tecnologia</nome>
+        <sigla>IBICT</sigla>
+        <cnpj>04.082.993/0001-49</cnpj>
+        <hasInstitutionAddress rdf:resource="#Endereco_1"/>
+        <hasAdminNature rdf:resource="#NaturezaAdministrativa_1"/>
+    </owl:NamedIndividual>
+
+    <!-- Área de Conhecimento -->
+    <owl:NamedIndividual rdf:about="#AreaDeConhecimento_1">
+        <rdf:type rdf:resource="#AreaDeConhecimento"/>
+        <rdfs:label xml:lang="pt-br">Ciências Sociais Aplicadas</rdfs:label>
+        <nome>Ciências Sociais Aplicadas</nome>
+        <codigo>60000007</codigo>
+        <hasKnowledgeAreaTable rdf:resource="#Tabela_1"/>
+    </owl:NamedIndividual>
+
+    <!-- Indivíduos adicionais baseados nas QCs -->
+    
+    <!-- Obras adicionais -->
+    <owl:NamedIndividual rdf:about="#Obra_2">
+        <rdf:type rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:label xml:lang="pt-br">A Hora Veterinária</rdfs:label>
+        <tituloProprio>A Hora Veterinária</tituloProprio>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Obra_3">
+        <rdf:type rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:label xml:lang="pt-br">Wines &amp; Vines Yearbook of the Wine Industry</rdfs:label>
+        <tituloProprio>Wines &amp; Vines Yearbook of the Wine Industry</tituloProprio>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Obra_4">
+        <rdf:type rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:label xml:lang="pt-br">Wine Review (Los Angeles)</rdfs:label>
+        <tituloProprio>Wine Review (Los Angeles)</tituloProprio>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Obra_5">
+        <rdf:type rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:label xml:lang="pt-br">BIB: revista brasileira de informação bibliográfica em Ciências Sociais</rdfs:label>
+        <tituloProprio>BIB: revista brasileira de informação bibliográfica em Ciências Sociais</tituloProprio>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Obra_6">
+        <rdf:type rdf:resource="#Obra"/>
+        <rdfs:label xml:lang="pt-br">Eine Kleine Nachtmusik</rdfs:label>
+        <tituloProprio>Eine Kleine Nachtmusik</tituloProprio>
+        <tipoDeRegistro>Música impressa</tipoDeRegistro>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Obra_7">
+        <rdf:type rdf:resource="#PublicacaoSeriada"/>
+        <rdfs:label xml:lang="pt-br">Bibliografia Brasileira de Documentação</rdfs:label>
+        <tituloProprio>Bibliografia Brasileira de Documentação</tituloProprio>
+    </owl:NamedIndividual>
+
+    <!-- ISSN adicional -->
+    <owl:NamedIndividual rdf:about="#ISSN_2">
+        <rdf:type rdf:resource="#ISSN"/>
+        <rdfs:label xml:lang="pt-br">1518-8353</rdfs:label>
+        <descricao>1518-8353</descricao>
+        <hasSupport rdf:resource="#MeioFisico_2"/>
+    </owl:NamedIndividual>
+
+    <!-- Meio Físico Digital -->
+    <owl:NamedIndividual rdf:about="#MeioFisico_2">
+        <rdf:type rdf:resource="#MeioFisico"/>
+        <rdfs:label xml:lang="pt-br">Digital</rdfs:label>
+        <nome>Digital</nome>
+    </owl:NamedIndividual>
+
+    <!-- Natureza Administrativa adicional -->
+    <owl:NamedIndividual rdf:about="#NaturezaAdministrativa_2">
+        <rdf:type rdf:resource="#NaturezaAdministrativa"/>
+        <rdfs:label xml:lang="pt-br">Pública Estadual</rdfs:label>
+        <nome>Pública Estadual</nome>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#NaturezaAdministrativa_3">
+        <rdf:type rdf:resource="#NaturezaAdministrativa"/>
+        <rdfs:label xml:lang="pt-br">Pública Municipal</rdfs:label>
+        <nome>Pública Municipal</nome>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#NaturezaAdministrativa_4">
+        <rdf:type rdf:resource="#NaturezaAdministrativa"/>
+        <rdfs:label xml:lang="pt-br">Autarquia</rdfs:label>
+        <nome>Autarquia</nome>
+    </owl:NamedIndividual>
+
+    <!-- Tipo de Biblioteca adicional -->
+    <owl:NamedIndividual rdf:about="#TipoDeBiblioteca_2">
+        <rdf:type rdf:resource="#TipoDeBiblioteca"/>
+        <rdfs:label xml:lang="pt-br">Biblioteca Central</rdfs:label>
+        <nome>Biblioteca Central</nome>
+    </owl:NamedIndividual>
+
+    <!-- Instituição adicional -->
+    <owl:NamedIndividual rdf:about="#Instituicao_2">
+        <rdf:type rdf:resource="#Instituicao"/>
+        <rdfs:label xml:lang="pt-br">Ministério de Ciência, Tecnologia e Inovação</rdfs:label>
+        <nome>Ministério de Ciência, Tecnologia e Inovação</nome>
+        <sigla>MCTI</sigla>
+        <cnpj>03.132.745/0001-00</cnpj>
+    </owl:NamedIndividual>
+
+    <!-- Notas -->
+    <owl:NamedIndividual rdf:about="#Nota_1">
+        <rdf:type rdf:resource="#Nota"/>
+        <rdfs:label xml:lang="pt-br">Nota Geral</rdfs:label>
+        <notasGerais>Disponível online, em texto integral de 1995 - presente, no portal de periódicos da CAPES</notasGerais>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Nota_2">
+        <rdf:type rdf:resource="#Nota"/>
+        <rdfs:label xml:lang="pt-br">Nota de Suplemento</rdfs:label>
+        <notaSuplemento>Wines &amp; Vines Yearbook of the Wine Industry (ISSN 0271-5694) tem suplemento: Wines &amp; Vines Annual Directory (ISSN 0084-0351)</notaSuplemento>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Nota_3">
+        <rdf:type rdf:resource="#Nota"/>
+        <rdfs:label xml:lang="pt-br">Nota de Complexidade</rdfs:label>
+        <notaComplexidade>Wine Review (Los Angeles) (ISSN 0096-8471) absorveu: Wine East (ISSN 0892-662X)</notaComplexidade>
+    </owl:NamedIndividual>
+
+    <!-- Referenciadores adicionais -->
+    <owl:NamedIndividual rdf:about="#Referenciador_2">
+        <rdf:type rdf:resource="#Referenciador"/>
+        <rdfs:label xml:lang="pt-br">Information science abstracts</rdfs:label>
+        <nome>Information science abstracts</nome>
+    </owl:NamedIndividual>
+
+    <!-- Tesauros -->
+    <owl:NamedIndividual rdf:about="#AssuntoControlado_2">
+        <rdf:type rdf:resource="#AssuntoControlado"/>
+        <rdfs:label xml:lang="pt-br">Ciência da Informação</rdfs:label>
+        <nome>Ciência da Informação</nome>
+        <fonte>Tesaurus Spines</fonte>
+    </owl:NamedIndividual>
+
+    <!-- Software adicional -->
+    <owl:NamedIndividual rdf:about="#Software_1">
+        <rdfs:label xml:lang="pt-br">SophiA</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Formato de documento -->
+    <owl:NamedIndividual rdf:about="#FormatoDoc_1">
+        <rdfs:label xml:lang="pt-br">JSON</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#FormatoDoc_2">
+        <rdfs:label xml:lang="pt-br">XML</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Frequências adicionais -->
+    <owl:NamedIndividual rdf:about="#Frequencia_1">
+        <rdfs:label xml:lang="pt-br">Mensal</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Situações de publicação -->
+    <owl:NamedIndividual rdf:about="#Situacao_1">
+        <rdfs:label xml:lang="pt-br">Corrente (ativo)</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Situacao_2">
+        <rdfs:label xml:lang="pt-br">Suspensa</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Status de registro -->
+    <owl:NamedIndividual rdf:about="#Status_1">
+        <rdfs:label xml:lang="pt-br">Revisado</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Tipos de registro adicionais -->
+    <owl:NamedIndividual rdf:about="#TipoReg_1">
+        <rdfs:label xml:lang="pt-br">Audiovisual</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#TipoReg_2">
+        <rdfs:label xml:lang="pt-br">Cartográfico</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Níveis bibliográficos adicionais -->
+    <owl:NamedIndividual rdf:about="#NivelBib_1">
+        <rdfs:label xml:lang="pt-br">Analítica</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#NivelBib_2">
+        <rdfs:label xml:lang="pt-br">Capítulos</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Níveis de catalogação adicionais -->
+    <owl:NamedIndividual rdf:about="#NivelCat_1">
+        <rdfs:label xml:lang="pt-br">Segundo nível (nível de catalogação de acordo com a AACR2)</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Formatos de catalogação adicionais -->
+    <owl:NamedIndividual rdf:about="#FormatoCat_1">
+        <rdfs:label xml:lang="pt-br">Dublin Core</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#FormatoCat_2">
+        <rdfs:label xml:lang="pt-br">MARC 21</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#FormatoCat_3">
+        <rdfs:label xml:lang="pt-br">ISBD</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Tipologias funcionais -->
+    <owl:NamedIndividual rdf:about="#TipoFunc_1">
+        <rdfs:label xml:lang="pt-br">Científico</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#TipoFunc_2">
+        <rdfs:label xml:lang="pt-br">Técnica</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Tipologias documentais -->
+    <owl:NamedIndividual rdf:about="#TipoDoc_1">
+        <rdfs:label xml:lang="pt-br">Livro</rdfs:label>
+    </owl:NamedIndividual>
+
+</rdf:RDF>
